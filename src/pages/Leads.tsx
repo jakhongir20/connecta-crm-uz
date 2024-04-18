@@ -1,11 +1,12 @@
+import PageDetails from "../ui/PageDetails";
 import Table from "../ui/Table";
 import TableHeader from "../ui/TableHeader";
 
 function Leads() {
   return (
     <div className="leads">
+      <PageDetails/>
       <div>
-        Leads header
         <TableHeader />
       </div>
       <div className="leads-table">

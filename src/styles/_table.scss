@@ -1,13 +1,7 @@
 .table__container {
   width: 100%;
   margin-top: 10px;
-  border: 0px solid rgba(102, 102, 102, 0.92);
-  align-self: flex-start !important;
-  @media screen and (max-width:1072px) {
-     min-width: 100%;
-     overflow-x: scroll !important;
-     min-width: 1000px;
-  }
+  // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   .table {
     width: 100%;
     border-collapse: collapse;

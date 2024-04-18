@@ -5,7 +5,6 @@ function Quotes() {
   return (
     <div className="leads">
       <div>
-        Quotes header
         <TableHeader />
       </div>
       <div className="quotes-table">
