@@ -39,8 +39,8 @@
     margin: 0 10px;
     position: relative;
     &::after {
-      content: "";
-      position: "absolute";
+      content: '';
+      position: absolute;
       top: 0;
       right: -11px;
       background-color: #d1d1d1;
