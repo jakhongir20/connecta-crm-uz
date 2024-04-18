@@ -27,7 +27,12 @@ function Table() {
               </div>
             </td>
             <td>Ali Brian</td>
-            <td>22222222222</td>
+            <td>
+              <div className="table__phone">
+                <img src="./img/dt_table/call.svg" alt="" />
+                <span>(999) 999-9999</span>
+              </div>
+            </td>
             <td>
               <div className="table__vehicle">
                 <div className="table__vehicle__imgs">
@@ -53,8 +58,12 @@ function Table() {
               </div>
             </td>
             <td>Ali Brian</td>
-            <td>22222222222</td>
             <td>
+              <div className="table__phone">
+                <img src="./img/dt_table/call.svg" alt="" />
+                <span>(999) 999-9999</span>
+              </div>
+            </td>            <td>
               <div className="table__vehicle">
                 <div className="table__vehicle__imgs">
                   <img src="./img/dt_table/engine.svg" alt="engine" />
@@ -79,8 +88,12 @@ function Table() {
               </div>
             </td>
             <td>Ali Brian</td>
-            <td>22222222222</td>
             <td>
+              <div className="table__phone">
+                <img src="./img/dt_table/call.svg" alt="" />
+                <span>(999) 999-9999</span>
+              </div>
+            </td>            <td>
               <div className="table__vehicle">
                 <div className="table__vehicle__imgs">
                   <img src="./img/dt_table/engine.svg" alt="engine" />
@@ -105,8 +118,12 @@ function Table() {
               </div>
             </td>
             <td>Ali Brian</td>
-            <td>22222222222</td>
             <td>
+              <div className="table__phone">
+                <img src="./img/dt_table/call.svg" alt="" />
+                <span>(999) 999-9999</span>
+              </div>
+            </td>            <td>
               <div className="table__vehicle">
                 <div className="table__vehicle__imgs">
                   <img src="./img/dt_table/engine.svg" alt="engine" />
@@ -131,8 +148,12 @@ function Table() {
               </div>
             </td>
             <td>Ali Brian</td>
-            <td>22222222222</td>
             <td>
+              <div className="table__phone">
+                <img src="./img/dt_table/call.svg" alt="" />
+                <span>(999) 999-9999</span>
+              </div>
+            </td>            <td>
               <div className="table__vehicle">
                 <div className="table__vehicle__imgs">
                   <img src="./img/dt_table/engine.svg" alt="engine" />
