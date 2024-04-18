@@ -1,0 +1,116 @@
+@import 'base/_mixins';
+
+$fontfamily: 'Roboto', sans-serif;
+
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw + 12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$color1: #21232c;
+$color2: #086ed6;
+$color3: #ffffff;
+$color4: #164863;
+
+$color-secondary: #427d9d;
+$color-gray: #666;
+
+._container {
+  max-width: $mw + px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+  @media (max-width: $md1+px) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 800px;
+    // padding: 0 10px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+  } //padding: 0 10px;
+  @media (max-width: $md4 + px) {
+    padding: 0 18px;
+  }
+}
+
+@import 'base/_ui';
+
+@import '_header';
+@import '_table-header';
+@import '_table';
+@import '_sidebar';
+@import 'base/_select';
+@import 'base/_input';
+@import 'base/_btn';
+@import 'base/_forms';
+
+// ====================================== MAIN CONTENT ============================================================================
+.wrapper {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+.main {
+  background-color: $color3;
+  padding: 12px 17px 4rem;
+  overflow: scroll;
+}
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.header {
+  background-color: $color3;
+  border-bottom: 1px solid #d1d1d1;
+  height: 56px;
+
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar {
+  background-color: $color4;
+  padding: 7px 6px;
+  width: 56px;
+  box-shadow: 2px 0px 15px 0px rgba(0, 0, 0, 0.25);
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.full-page {
+  height: 100vh;
+  background-color: $color-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  margin: 2rem auto 6.8rem;
+  width: 6.4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side, #ffffff 94%, #0000) top/10px 10px no-repeat,
+    conic-gradient(#0000 30%, $color-secondary);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 10px), #000 0);
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* ========================================= MAIN CONTENT =========================================================================*/

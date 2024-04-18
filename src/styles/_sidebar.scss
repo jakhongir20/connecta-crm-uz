@@ -1,0 +1,27 @@
+.sidebar {
+}
+.nav {
+  // .nav__list
+  &__list {
+    @include flexbox();
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  // .nav__link
+  &__link {
+    @include anim(0.3s, 0s);
+    width: 44px;
+    height: 44px;
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+    &._active {
+      border-radius: 6px;
+      background-color: $color-secondary;
+    }
+    &.first_child {
+      margin-top: 0px;
+    }
+  }
+}

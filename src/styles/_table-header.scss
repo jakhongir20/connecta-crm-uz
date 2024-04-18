@@ -1,0 +1,141 @@
+.dt-header {
+  border-bottom: 1px solid $color-gray;
+  padding: 7px 0;
+  @include flexbox();
+  align-items: center;
+  justify-content: space-between;
+  // .dt-header__left
+  &__left {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+  }
+  // .dt-header__tableicon
+  &__tableicon {
+    border-radius: 3px;
+    border: 1px solid $color-gray;
+    background-color: #efefef;
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 25px;
+    img {
+      width: 15px;
+      height: 15px;
+      display: block;
+    }
+  }
+  // .dt-header__calendaricon
+  &__calendaricon {
+    border-radius: 4px;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 25px;
+    margin: 0 10px;
+    position: relative;
+    &::after {
+      content: "";
+      position: "absolute";
+      top: 0;
+      right: -11px;
+      background-color: #d1d1d1;
+      height: 24px;
+      width: 1px;
+    }
+    img {
+      width: 15px;
+      height: 15px;
+      display: block;
+    }
+  }
+  // .dt-header__add-btn
+  &__add-btn {
+    margin-left: 10px;
+  }
+  // .dt-header__right
+  &__right {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+  }
+  // .dt-header__allsources
+  &__allsources {
+    // .dt-header__allsources_select
+    &_select {
+    }
+  }
+  // .dt-header__showlist
+  &__showlist {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    color: $color-gray;
+    font-weight: 600;
+    margin-left: 12px;
+    // .dt-header__showlist_price
+    &_price {
+    }
+    // .dt-header__showlist_gutter
+    &_gutter {
+      @include flexbox();
+      align-items: center;
+      margin-left: 8px;
+    }
+    // .dt-header__showlist_perpage
+    &_perpage {
+    }
+    // .dt-header__showlist_allcounts
+    &_allcounts {
+    }
+    // .dt-header__showlist_open
+    &_open {
+      margin-left: 10px;
+      display: flex;
+      width: 30px;
+      height: 25px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      border: 1px solid #d1d1d1;
+      img {
+        width: 18px;
+      }
+    }
+  }
+  &__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: $color-gray;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+  // .dt-header__search
+  &__search {
+    margin-left: 10px;
+  }
+  // .dt-header__users
+  &__users {
+    @include flexbox();
+    align-items: center;
+    margin-left: 10px;
+  }
+  // .dt-header__hamburg
+  &__hamburg {
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
