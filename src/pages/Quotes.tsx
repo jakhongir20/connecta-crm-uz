@@ -8,7 +8,7 @@ function Quotes() {
         Quotes header
         <TableHeader />
       </div>
-      <div className="leads-table">
+      <div className="quotes-table">
         <Table />
       </div>
     </div>
