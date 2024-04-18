@@ -9,7 +9,7 @@
 ## Features
 
 - Authentication: access/refresh token, user roles: admin, analitc, user
-- Dashboard, Users, Settings, Analytics, etc
+- Leads, Users, Settings, etc
 
 # step-1
 
@@ -20,7 +20,6 @@
 - Configure husky, lint-staged
 - Setup vite, react, babel, ts
 - Add eslint-plugin-react
-- TRPC frontend setup
 
 # step-2
 
