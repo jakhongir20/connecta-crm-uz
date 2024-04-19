@@ -1,18 +1,13 @@
 function Table() {
 
-  const onChecked = () => {
-    const d = document.querySelectorAll("input");
-    console.log(d);
 
-    d.forEach(item => item.checked)
-  }
 
   return (
     <div className="table__container">
       <table className="table">
         <thead>
           <tr>
-            <th className="table__checkbox"><input type="checkbox" onChange={onChecked} /></th>
+            <th className="table__checkbox"><input type="checkbox"  /></th>
             <th>Id</th>
             <th>Received</th>
             <th className="table__user">User</th>

@@ -32,6 +32,7 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      position: relative;
     }
     .table__id {
       color: #086ed6;
@@ -84,6 +85,9 @@
     }
     .table__node {
       position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
       &__textarea {
         width: 100%;
         color: #21232c;
@@ -131,19 +135,9 @@
         align-items: center;
         gap: 15px;
       }
-      &__count {
-        color: #21232c;
-        // text-align: right;
-        font-family: $fontfamily;
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
       &__content {
         border-bottom: 1px solid #666666;
         padding-bottom: 4px;
-        // margin-bottom: 4px;
       }
       &__content:last-child {
         border: none;
@@ -189,6 +183,9 @@
         transform: rotate(45deg);
         z-index: 1;
       }
+    }
+    .table__node:hover {
+      overflow: inherit;
     }
     .table__node:hover .table__node__modal {
       opacity: 1;
