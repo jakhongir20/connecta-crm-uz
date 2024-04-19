@@ -1,18 +1,18 @@
 function Table() {
 
-  const onChecked=()=>{
+  const onChecked = () => {
     const d = document.querySelectorAll("input");
-  console.log(d);
-  
-    d.forEach(item=>item.checked)
+    console.log(d);
+
+    d.forEach(item => item.checked)
   }
-  
+
   return (
     <div className="table__container">
       <table className="table">
         <thead>
           <tr>
-            <th className="table__checkbox"><input type="checkbox" onChange={onChecked}  /></th>
+            <th className="table__checkbox"><input type="checkbox" onChange={onChecked} /></th>
             <th>Id</th>
             <th>Received</th>
             <th className="table__user">User</th>
@@ -65,7 +65,31 @@ function Table() {
                 <img src="./img/dt_table/default_user_image.png" alt="" className="table__user__img" />
               </div>
             </td>
-            <td>Ali Brian</td>
+            <td>
+              <div className="table__node">
+                <span className="table__dode__data">Ali Brian ....</span>
+                <div className="table__node__modal">
+                  <div className="table__node__content">
+                    <div className="node__date">01/21/2024 09:01 AM Ali Brian</div>
+                    <p className="nod__description">
+                      Customer wants to talk to customer
+                    </p>
+                  </div>
+                  <div className="table__node__content">
+                    <div className="node__date">01/21/2024 09:01 AM Ali Brian</div>
+                    <p className="nod__description">
+                      Customer wants to talk to customer
+                    </p>
+                  </div>
+                  <div className="table__node__content">
+                    <div className="node__date">01/21/2024 09:01 AM Ali Brian</div>
+                    <p className="nod__description">
+                      Customer wants to talk to customer
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </td>
             <td>
               <div className="table__phone">
                 <img src="./img/dt_table/call.svg" alt="" />
