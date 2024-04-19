@@ -1,5 +1,18 @@
 .dt-header-select {
   color: $color-gray;
   font-size: 16px;
-  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  @include flexbox();
+  align-items: center;
+  padding-left: 4px;
+  &_icon {
+    width: 16px;
+  }
+  &_avater {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    margin-right: 3px;
+  }
 }
