@@ -3,6 +3,7 @@ import { Drawer } from 'antd';
 import React from 'react';
 import DrawerControl from '../features/drawer/DrawerControl';
 import DrawerHeader from '../features/drawer/DrawerHeader';
+import DrawerContent from '../features/drawer/DrawerContent';
 
 function DrawerApp({ open, isFullScreen, onFullScreen, onClose }): React.FC {
   const drawerWith = isFullScreen ? 'calc(100% - 56px)' : '76%';
@@ -30,13 +31,7 @@ function DrawerApp({ open, isFullScreen, onFullScreen, onClose }): React.FC {
           onClose={onClose}
           onFullScreen={onFullScreen}
         />
-        <p>
-          Some contents... Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Labore quo quasi esse sit eos sequi repellat minus quam
-          voluptates temporibus qui, voluptatibus amet eius, eligendi non
-          voluptate, id dolor adipisci aspernatur. Consequuntur, ullam
-          laboriosam.
-        </p>
+        <DrawerContent />
       </Drawer>
     </div>
   );
