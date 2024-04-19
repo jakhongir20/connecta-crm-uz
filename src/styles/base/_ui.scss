@@ -49,7 +49,9 @@ body {
   color: $color1;
   background: #fff;
   overflow-x: hidden;
-  transition: color 0.3s, background-color 0.3s;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
 
   ::-webkit-scrollbar {
     width: none; /* Set a small width to hide the thumb */
@@ -77,6 +79,8 @@ body {
   }
 }
 
+/* =====================================  GLOBAL CLASSES =============================================================================*/
+
 .main_title {
 }
 .common_title {
@@ -90,4 +94,10 @@ body {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.relative {
+  position: relative !important;
+}
+.absolute {
+  position: absolute !important;
 }
