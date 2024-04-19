@@ -1,10 +1,8 @@
 .table__container {
   width: 100%;
-  margin: 20px;
-  overflow: hidden;
-  border: 0px solid rgba(102, 102, 102, 0.92);
-  align-self: flex-start !important;
-  .table {
+  margin-top: 10px;
+  // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
@@ -17,7 +15,7 @@
     td,
     th {
       border: 0.5px solid rgba(102, 102, 102, 0.3);
-      padding: 10px;
+      padding: 10px !important;
     }
     th {
       color: #21232c;
@@ -35,7 +33,7 @@
       font-weight: 400;
       line-height: normal;
     }
-    &__id {
+    .table__id {
       color: #086ed6;
       font-family: $fontfamily;
       font-size: 15px;
@@ -44,11 +42,121 @@
       line-height: normal;
       cursor: pointer;
     }
-    &__user__img {
+    .table__user__img {
       width: 24px;
       height: 24px;
       border-radius: 4px;
       border: 0.5px solid #164863;
     }
+    .table__checkbox {
+      width: 25px;
+    }
+    .table__user {
+      width: 56px;
+    }
+    .table__img__container {
+      text-align: center;
+    }
+
+    .table__vehicle {
+      @include flexbox();
+      align-items: center;
+      gap: 5px;
+    }
+    .table__vehicle__imgs {
+      @include flexbox();
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .table__phone {
+      @include flexbox();
+      align-items: center;
+      gap: 5px;
+      img {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .table__node {
+      position: relative;
+      &__data {
+        @include flexbox();
+        align-items: center;
+        gap: 15px;
+      }
+      &__count {
+        color: #21232c;
+        // text-align: right;
+        font-family: $fontfamily;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      &__content {
+        border-bottom: 1px solid #666666;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+      }
+      &__content:last-child {
+        border: none;
+      }
+      &__modal {
+        width: 200px;
+        border-radius: 6.5px;
+        background: #eaeaea;
+        position: absolute;
+        right: -150px;
+        top: 30px;
+        padding: 10px 10px;
+        opacity: 0;
+        visibility: visible;
+        transition: 0.2s;
+        z-index: 9999;
+        .node__date {
+          color: #086ed6;
+          font-family: $fontfamily;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .node__description {
+          color: #21232c;
+          font-family: $fontfamily;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          padding-top: 5px;
+        }
+      }
+      &__modal::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background: #eaeaea;
+        position: absolute;
+        top: -7.5px;
+        left: 20px;
+        transform: rotate(45deg);
+        z-index: 1;
+      }
+    }
+    .table__node__count:hover .table__node__modal {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .ant-pagination {
+    display: none;
   }
 }
+
+
+
