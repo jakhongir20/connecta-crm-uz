@@ -1,11 +1,11 @@
-import PageDetails from "../ui/PageDetails";
+// import PageDetails from "../ui/PageDetails";
 import Table from "../ui/Table";
 import TableHeader from "../ui/TableHeader";
 
 function Leads() {
   return (
     <div className="leads">
-      <PageDetails/>
+      {/* <PageDetails/> */}
       <div>
         <TableHeader />
       </div>
