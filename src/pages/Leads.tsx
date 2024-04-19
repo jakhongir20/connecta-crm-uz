@@ -1,7 +1,5 @@
-
-// import React, { useState } from 'react';
-import { Table } from 'antd';
 import TableHeader from "../ui/TableHeader";
+import { Table } from 'antd';
 import { LeadTableColumns, LeadTableData } from '../utils/table';
 
 
