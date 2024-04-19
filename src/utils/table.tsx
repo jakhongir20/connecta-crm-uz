@@ -6,6 +6,7 @@ export const LeadTableColumns = [
         title: 'Id',
         dataIndex: 'id',
         render: (text: string) => <a>{text}</a>,
+
     },
     {
         title: 'Received	',
@@ -17,20 +18,24 @@ export const LeadTableColumns = [
         render: (text: number) => <div className="table__node">
             <div className="table__node__data">
                 <img src="./img/dt_table/nodeimg.png" alt="" />
-                {
-                    text && <div className="table__node__count">
-                        <span>{text}</span>
-                        <div className="table__node__modal">
-                            <div className="table__node__content">
+                <div className="table__node__count">
+                    <span>{text}</span>
+                    <div className="table__node__modal">
+                        <div className="table__node__content">
+                            <textarea cols={40} rows={4} className="table__node__textarea"></textarea>
+                            <div className="table__node__footer">
+                                <button type="button" className="table__node__info">Cancel</button>
+                                <button type="button" className="table__node__primary">Save</button>
+                            </div>
+                        </div>
+                        {/* <div className="table__node__content">
                                 <div className="node__date">01/21/2024 09:01 AM Ali Brian</div>
                                 <p className="node__description">
                                     Customer wants to talk to customer
                                 </p>
-                            </div>
-                        </div>
+                            </div> */}
                     </div>
-                }
-
+                </div>
             </div>
         </div>
     },
