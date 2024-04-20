@@ -23,7 +23,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <DarkModeProvider>
-      <QueryClientProvider client={queryClient}>
+         <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
           <Suspense fallback={<Spinner />}>
@@ -65,6 +65,7 @@ function App() {
           }}
         />
       </QueryClientProvider>
+     
     </DarkModeProvider>
   );
 }
