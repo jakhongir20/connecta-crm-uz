@@ -1,7 +1,7 @@
 // import Table from "../ui/Table";
 import TableHeader from "../ui/TableHeader";
 import { Table } from 'antd';
-import { LeadTableColumns, LeadTableData } from '../utils/table';
+import { QuotesTableColumns, QuotesTableData } from '../utils/table';
 
 
 
@@ -23,14 +23,14 @@ function Quotes() {
         <TableHeader />
       </div>
       <div className="quotes-table">
-      <div className='table__container'>
+        <div className='table__container'>
           <Table
             rowSelection={{
               // type: selectionType,
               ...rowSelection,
             }}
-            columns={LeadTableColumns}
-            dataSource={LeadTableData}
+            columns={QuotesTableColumns}
+            dataSource={QuotesTableData}
           />
         </div>
       </div>

@@ -1,7 +1,6 @@
 .table__container {
   width: 100%;
   margin-top: 10px;
-  // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   table {
     width: 100%;
     border-collapse: collapse;
@@ -87,8 +86,8 @@
       position: relative;
       width: 100%;
       height: 100%;
-      &__create{
-        img{
+      &__create {
+        img {
           cursor: pointer;
         }
       }
@@ -146,7 +145,7 @@
       &__content:last-child {
         border: none;
       }
-      &__create-modal{
+      &__create-modal {
         width: 200px;
         border-radius: 6.5px;
         background: #eaeaea;
@@ -156,7 +155,6 @@
         padding: 10px 10px 0;
         transition: 0.2s;
         z-index: 5;
-        
       }
       &__modal {
         width: 200px;
@@ -218,6 +216,16 @@
       opacity: 1;
       visibility: visible;
     }
+   
+  }
+  .table__price {
+    color: #086ed6;
+    font-family: $fontfamily;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-right: 5px;
   }
   .ant-pagination {
     display: none;
