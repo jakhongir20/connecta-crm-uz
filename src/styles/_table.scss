@@ -85,9 +85,13 @@
     }
     .table__node {
       position: relative;
-      overflow: hidden;
       width: 100%;
       height: 100%;
+      &__create{
+        img{
+          cursor: pointer;
+        }
+      }
       &__textarea {
         width: 100%;
         color: #21232c;
@@ -142,6 +146,18 @@
       &__content:last-child {
         border: none;
       }
+      &__create-modal{
+        width: 200px;
+        border-radius: 6.5px;
+        background: #eaeaea;
+        position: absolute;
+        left: -20px;
+        top: 30px;
+        padding: 10px 10px 0;
+        transition: 0.2s;
+        z-index: 5;
+        
+      }
       &__modal {
         width: 200px;
         border-radius: 6.5px;
@@ -151,7 +167,7 @@
         top: 30px;
         padding: 10px 10px 0;
         opacity: 0;
-        visibility: visible;
+        visibility: hidden;
         transition: 0.2s;
         z-index: 5;
         .node__date {
@@ -183,11 +199,22 @@
         transform: rotate(45deg);
         z-index: 1;
       }
+      &__create-modal::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background: #eaeaea;
+        position: absolute;
+        top: -7.5px;
+        left: 20px;
+        transform: rotate(45deg);
+        z-index: 1;
+      }
     }
     .table__node:hover {
       overflow: inherit;
     }
-    .table__node:hover .table__node__modal {
+    .table__node__count:hover .table__node__modal {
       opacity: 1;
       visibility: visible;
     }
