@@ -1,10 +1,10 @@
 import TableHeaderLeft from './TableHeaderLeft';
 import TableHeaderRight from './TableHeaderRight';
 
-function TableHeader() {
+function TableHeader({pageName}:{pageName:string}) {
   return (
     <div className="dt-header">
-      <TableHeaderLeft />
+      <TableHeaderLeft pageName={pageName} />
       <TableHeaderRight />
     </div>
   );

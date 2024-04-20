@@ -20,7 +20,7 @@ function Quotes() {
   return (
     <div className="leads">
       <div>
-        <TableHeader />
+        <TableHeader pageName="quotes" />
       </div>
       <div className="quotes-table">
         <div className='table__container'>

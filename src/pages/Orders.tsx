@@ -14,7 +14,7 @@ const rowSelection = {
 function Order() {
     return (
         <div className="orders">
-            <TableHeader />
+            <TableHeader pageName="order" />
             <div className="quotes-table">
                 <div className='table__container'>
                     <Table

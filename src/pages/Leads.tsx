@@ -43,7 +43,7 @@ function Leads() {
         onFullScreen={onDrawerFull}
       />
       <div>
-        <TableHeader />
+        <TableHeader pageName="lead" />
       </div>
       <div className="leads-table">
         <button onClick={openDrawer}>openDrawer</button>

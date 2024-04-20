@@ -1,4 +1,4 @@
-function TableHeaderLeft() {
+function TableHeaderLeft({pageName}:{pageName:string}) {
   return (
     <div className="dt-header__left">
       <div className="dt-header__tableicon cursor-pointer">
@@ -9,7 +9,7 @@ function TableHeaderLeft() {
       </div>
       <button type="button" className="dt-header__add-btn btn--primary">
         <img src="./img/plus_w.svg" alt="" />
-        <span>New lead</span>
+        <span>New {pageName}</span>
       </button>
     </div>
   );
