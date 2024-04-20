@@ -12,12 +12,7 @@ export const LeadTableColumns = [
         dataIndex: 'received',
     },
     {
-        title: 'Note	',
-        dataIndex: 'node',
-        render: (text: string) => <TableDropdown text={text} />
-    },
-    {
-        title: <div style={{ textAlign: "center" }}>User</div>,
+        title:'User',
         dataIndex: 'user',
         render: () => <div className="table__img__container"><img src="./img/dt_table/default_user_image.png" alt="" className="table__user__img" /></div>
     },
@@ -54,7 +49,6 @@ export const LeadTableData = [
     key: '1',
     id: '600009',
     received: '03/25/2024 03:00 PM',
-    node: 4,
     user: '03/25/2024 03:00 PM',
     customer: 'Ali Brian',
     phone: '(999) 999-9999',
@@ -122,7 +116,7 @@ export const QuotesTableColumns = [
         render: (text: string) => <TableDropdown text={text} />
     },
     {
-        title: <div style={{ textAlign: "center" }}>User</div>,
+        title:'User',
         dataIndex: 'user',
         render: () => <div className="table__img__container"><img src="./img/dt_table/default_user_image.png" alt="" className="table__user__img" /></div>
     },
@@ -240,7 +234,7 @@ export const OrderTableColumns = [
         render: (text: string) => <TableDropdown text={text} />
     },
     {
-        title: <div style={{ textAlign: "center" }}>User</div>,
+        title:'User',
         dataIndex: 'user',
         render: () => <div className="table__img__container"><img src="./img/dt_table/default_user_image.png" alt="" className="table__user__img" /></div>
     },

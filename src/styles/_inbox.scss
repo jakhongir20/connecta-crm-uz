@@ -1,0 +1,73 @@
+.inbox {
+  &__header {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    margin: 6.84px 0 16px;
+  }
+  &__left {
+    @include flexbox();
+    align-items: center;
+    &__text {
+      margin-right: 31px;
+      color: #666;
+      font-family: $fontfamily;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      cursor: pointer;
+      position: relative;
+    }
+    &__text:hover{
+        color: #086ed6 !important;
+    }
+    &__text::after{
+        content: "";
+        position: absolute;
+        right: -20px;
+        width: 1px;
+        height: 100%;
+        background: #D1D1D1;
+    }
+  }
+  &__right {
+    .inbox__menu__item {
+      background: none;
+      color: #666;
+      font-family: $fontfamily;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .inbox__menu__item:hover {
+      color: #086ed6 !important;
+      background: #ddf2fd !important;
+    }
+    &__active {
+      color: #086ed6 !important;
+      background: #ddf2fd !important;
+    }
+  }
+  &__menu {
+    @include flexbox();
+    align-items: center;
+    gap: 5px;
+    &__item {
+      @include flexbox();
+      align-items: center;
+      gap: 5px;
+      color: #086ed6;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      font-family: $fontfamily;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: #ddf2fd;
+      cursor: pointer;
+    }
+  }
+}
