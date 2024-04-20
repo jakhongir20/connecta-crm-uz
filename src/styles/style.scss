@@ -38,11 +38,13 @@ $color-gray: #666;
 }
 
 @import 'base/_ui';
+@import 'ant-styles';
 
 @import '_header';
 @import '_table-header';
 @import '_table';
 @import '_sidebar';
+@import '_drawer';
 @import '_page-details';
 @import 'base/_select';
 @import 'base/_input';

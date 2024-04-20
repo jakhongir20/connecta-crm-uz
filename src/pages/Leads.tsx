@@ -1,12 +1,16 @@
-import TableHeader from "../ui/TableHeader";
 import { Table } from 'antd';
+import { useState } from 'react';
+import DrawerApp from '../ui/Drawer';
+import TableHeader from '../ui/TableHeader';
 import { LeadTableColumns, LeadTableData } from '../utils/table';
-
-
 
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+    console.log(
+      `selectedRowKeys: ${selectedRowKeys}`,
+      'selectedRows: ',
+      selectedRows,
+    );
   },
   getCheckboxProps: (record: DataType) => ({
     disabled: record.name === 'Disabled User', // Column configuration not to be checked
@@ -15,16 +19,35 @@ const rowSelection = {
 };
 
 function Leads() {
+  const [open, setOpen] = useState(false);
+  const [isFullScreen, setFullScreen] = useState(false);
 
+  function openDrawer() {
+    setOpen(true);
+  }
+  function onClose() {
+    console.log('close');
+    setOpen(false);
+    setFullScreen(false);
+  }
+  function onDrawerFull(value: boolean) {
+    setFullScreen(value);
+  }
 
   return (
     <div className="leads">
+      <DrawerApp
+        open={open}
+        isFullScreen={isFullScreen}
+        onClose={onClose}
+        onFullScreen={onDrawerFull}
+      />
       <div>
         <TableHeader />
       </div>
       <div className="leads-table">
-
-        <div className='table__container'>
+        <button onClick={openDrawer}>openDrawer</button>
+        <div className="table__container">
           <Table
             rowSelection={{
               // type: selectionType,
@@ -34,10 +57,8 @@ function Leads() {
             dataSource={LeadTableData}
           />
         </div>
-
       </div>
     </div>
-
   );
 }
 
