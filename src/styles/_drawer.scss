@@ -86,6 +86,54 @@ $transition-duration: 200ms;
     }
   }
 
+  // .drawer-header__id
+  &__id {
+    font-weight: 400;
+    color: $color2;
+    margin-left: 18px;
+  }
+  // .drawer-header__username
+  &__username {
+    font-weight: 700;
+    color: $color1;
+    margin-left: 25px;
+  }
+
+  &__more {
+    border-radius: 4px;
+    border: 1px solid #d1d1d1;
+    background: #ffffff;
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 10px;
+    img {
+      width: 14px;
+    }
+  }
+
+  &__btnitem {
+    margin-left: 20px;
+    &.__avatar {
+      @include flexbox();
+      align-items: center;
+      justify-content: center;
+      .user-name {
+        color: $color1;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__actions {
+    @include flexbox();
+    align-items: center;
+  }
+
   .control {
     display: flex;
     align-items: center;
