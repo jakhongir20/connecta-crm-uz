@@ -16,3 +16,8 @@
 :where(.css-dev-only-do-not-override-1qfezbu) a {
   color: rgba(0, 0, 0, 0.88);
 }
+:where(.css-dev-only-do-not-override-1qfezbu).ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header {
+  align-items: center;
+}

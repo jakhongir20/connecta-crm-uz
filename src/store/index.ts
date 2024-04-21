@@ -11,9 +11,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authReducer from '../features/authentication/authSlice';
+import vehicleReducer from '../features/drawer/vehicleSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  vehicle: vehicleReducer,
 });
 
 const persistConfig = {

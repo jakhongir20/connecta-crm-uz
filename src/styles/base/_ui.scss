@@ -107,3 +107,36 @@ body {
 .mr-10 {
   margin-right: 10px;
 }
+.ml-5 {
+  margin-left: 5px;
+}
+.mr-5 {
+  margin-right: 5px;
+}
+.-ml-15 {
+  margin-left: -15px;
+}
+.-ml-20 {
+  margin-left: -20px;
+}
+.-ml-25 {
+  margin-left: -25px;
+}
+.pl-5 {
+  padding-left: 5px !important;
+}
+.pr-5 {
+  padding-right: 5px;
+}
+.d-flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.cursor-inherit {
+  cursor: initial;
+}

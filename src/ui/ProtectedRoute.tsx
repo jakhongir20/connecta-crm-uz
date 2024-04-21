@@ -1,15 +1,15 @@
-import { PropsWithChildren } from "react";
-import Spinner from "./Spinner";
+import { PropsWithChildren } from 'react';
+import Spinner from './Spinner';
 
 type ProtectedRouteProps = {
   roles: string[];
 };
 
-function ProtectedRoute({ children, roles }: PropsWithChildren<ProtectedRouteProps>) {
+function ProtectedRoute({ children }: PropsWithChildren<ProtectedRouteProps>) {
   // const { isPending, user, error } = useUser();
   // const navigate = useNavigate();
   const isPending = false;
-  console.log(roles);
+  // console.log(roles);
   // useEffect(
   //   () => {
   //     if ((!user && !isPending) || (error && roles && !roles.some(role => user?.roles.includes(role)))) {
@@ -19,7 +19,6 @@ function ProtectedRoute({ children, roles }: PropsWithChildren<ProtectedRoutePro
   //   },
   //   [user, roles, navigate, isPending, error]
   // );
-
 
   if (isPending) {
     return (
