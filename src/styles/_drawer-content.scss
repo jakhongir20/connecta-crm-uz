@@ -1,0 +1,194 @@
+.drawer-content {
+  @include flexbox();
+  background: #fafafa;
+  height: 100%;
+  &__left {
+    width: 400px;
+    border-right: 1px solid #d1d1d1;
+    height: 100%;
+    overflow-y: auto;
+    .ant-collapse-item {
+      .arrow-icon {
+        width: 14px;
+        @include anim(0.3s, 0s);
+      }
+      &.ant-collapse-item-active {
+        .arrow-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .ant-collapse-header-text {
+      color: #21232c;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    :where(.css-dev-only-do-not-override-1qfezbu).ant-collapse
+      .ant-collapse-content
+      > .ant-collapse-content-box {
+      padding: 0;
+    }
+    :where(.css-dev-only-do-not-override-1qfezbu).ant-collapse
+      > .ant-collapse-item
+      > .ant-collapse-header {
+      padding: 12px 10px;
+    }
+  }
+  &__right {
+    width: auto;
+  }
+}
+/* ==================================================================================================================*/
+
+.box-header {
+  &__label {
+  }
+
+  &__more,
+  &__edit,
+  &__copy,
+  &__arrow-bold,
+  &__add {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    padding: 3px 2px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 4px;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    &.__inner {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__more {
+    width: 34px;
+  }
+  &__add {
+    background-color: transparent;
+    width: 30px;
+  }
+  &__arrow-bold {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    width: 14px;
+    transform: rotate(-90deg);
+    @include anim(0.3s, 0s);
+    &._active {
+      @include anim(0.3s, 0s);
+      transform: rotate(0);
+    }
+  }
+}
+/* ==================================================================================================================*/
+.box-header-inner {
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-collapse {
+    padding: 0 9px;
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header {
+    padding: 0;
+  }
+
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-collapse-ghost
+    > .ant-collapse-item {
+    padding: 4px 10px 0;
+    border-radius: 4px;
+    @include anim(0.2s, 0s);
+    &:hover,
+    &-active {
+      background: #eaeaea;
+      .detail__right_actions {
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+      }
+    }
+  }
+  :where(
+      .css-dev-only-do-not-override-1qfezbu
+    ).ant-collapse.ant-collapse-icon-position-end
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-expand-icon {
+    padding-inline-start: 0;
+  }
+}
+/* ==================================================================================================================*/
+.detail {
+  &__header {
+  }
+  &__icon {
+  }
+  &__label {
+    font-size: 15px;
+    color: #164863;
+    font-weight: 500;
+  }
+  &__left {
+    min-width: 40%;
+    max-width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &__right {
+    padding-right: 20px;
+    width: -webkit-fill-available;
+  }
+  &__right_actions {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -2;
+    @include anim(0.15s, 0s);
+  }
+  &__text {
+    font-size: 15px;
+    color: #21232c;
+    font-weight: 400;
+    &_with-bg {
+      border-radius: 4px;
+      background-color: #ddf2fd;
+      display: flex;
+      padding: 0px 5px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &__btns {
+    padding-right: 23px;
+  }
+}
+/* ==================================================================================================================*/
+.detail-vehicle {
+}
+.detail-condition {
+}
+
+/* ==================================================================================================================*/
+.detail-inner {
+  padding: 6px 0;
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-form-small
+    .ant-form-item
+    .ant-form-item-label
+    > label {
+    width: -webkit-fill-available;
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu)[class^='ant-form']
+    [class^='ant-form'],
+  :where(.css-dev-only-do-not-override-1qfezbu)[class*=' ant-form']
+    [class^='ant-form'],
+  :where(.css-dev-only-do-not-override-1qfezbu)[class^='ant-form']
+    [class*=' ant-form'],
+  :where(.css-dev-only-do-not-override-1qfezbu)[class*=' ant-form']
+    [class*=' ant-form'] {
+    margin-bottom: 2px;
+  }
+}
