@@ -11,6 +11,7 @@ import { getMenuData } from "./services/menu/index.ts";
 import AppLayout from "./ui/AppLayout.tsx";
 import ProtectedRoute from "./ui/ProtectedRoute.tsx";
 import Spinner from "./ui/Spinner.tsx";
+import ModalProvider from "./context/Modal.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <DarkModeProvider>
+      <ModalProvider>
          <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
@@ -65,6 +67,7 @@ function App() {
           }}
         />
       </QueryClientProvider>
+      </ModalProvider>
      
     </DarkModeProvider>
   );

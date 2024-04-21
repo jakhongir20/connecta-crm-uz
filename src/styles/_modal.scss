@@ -12,13 +12,13 @@
   background: #000000b3;
   align-items: flex-start;
   opacity: 0;
-  visibility:hidden;
+  visibility: hidden;
   transition: 0.2s;
-  &__active{
-   opacity: 1;
-   visibility: visible;
+  &__active {
+    opacity: 1;
+    visibility: visible;
   }
-  
+
   &__content {
     width: 100%;
     max-width: 420px;
@@ -50,7 +50,7 @@
   }
   &__body {
     padding: 20px 15px;
-    height: calc(100vh - 150px);
+    max-height: calc(100vh - 150px);
     overflow-y: auto;
   }
   &__cancel {
@@ -61,12 +61,25 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding: 3px 7px;
+    padding: 3px 12px;
     border-radius: 4px;
     border: 1px solid #d1d1d1;
     background: #fff;
   }
-  &__cancel:hover {
+  &__save {
+    color: #fff;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 3px 12px;
+    border-radius: 4px;
+background:  #086ED6;
+  }
+  &__cancel:hover,
+  &__save:hover {
     opacity: 0.8;
   }
 }

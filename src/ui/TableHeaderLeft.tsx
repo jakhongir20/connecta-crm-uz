@@ -1,5 +1,7 @@
-
+import { useModal } from "../context/Modal";
 function TableHeaderLeft({pageName}:{pageName:string}) {
+  const {hideModal } = useModal()
+  
   return (
     <div className="dt-header__left">
       <div className="dt-header__tableicon cursor-pointer">
@@ -8,7 +10,7 @@ function TableHeaderLeft({pageName}:{pageName:string}) {
       <div className="dt-header__calendaricon cursor-pointer">
         <img src="./img/dt_table/calendar.svg" alt="" />
       </div>
-      <button type="button" className="dt-header__add-btn btn--primary">
+      <button type="button" className="dt-header__add-btn btn--primary" onClick={()=>hideModal(true)}>
         <img src="./img/plus_w.svg" alt="" />
         <span>New {pageName}</span>
       </button>

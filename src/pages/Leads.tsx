@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DrawerApp from '../ui/Drawer';
 import TableHeader from '../ui/TableHeader';
 import { LeadTableColumns, LeadTableData } from '../utils/table';
-import Modal from '../ui/Modal';
+import LeadModal from '../ui/modal/LeadModal';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(
@@ -34,6 +34,11 @@ function Leads() {
     setFullScreen(value);
   }
 
+
+
+
+
+
   return (
     <div className="leads">
       <DrawerApp
@@ -42,13 +47,12 @@ function Leads() {
         onClose={onClose}
         onFullScreen={onDrawerFull}
       />
-     
+
       <div>
         <TableHeader pageName="lead" />
       </div>
       <div className="leads-table">
-        <button onClick={openDrawer}>openDrawer</button> 
-        <Modal/>
+        <button onClick={openDrawer}>openDrawer</button>
         <div className="table__container">
           <Table
             rowSelection={{
@@ -60,6 +64,10 @@ function Leads() {
           />
         </div>
       </div>
+
+
+        <LeadModal />
+
     </div>
   );
 }

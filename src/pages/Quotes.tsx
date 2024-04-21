@@ -2,6 +2,7 @@
 import TableHeader from "../ui/TableHeader";
 import { Table } from 'antd';
 import { QuotesTableColumns, QuotesTableData } from '../utils/table';
+import QuatesModal from "../ui/modal/OrderModal";
 
 
 
@@ -34,6 +35,7 @@ function Quotes() {
           />
         </div>
       </div>
+      <QuatesModal />
     </div>
 
   );

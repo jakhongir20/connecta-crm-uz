@@ -1,15 +1,16 @@
 import TableHeader from "../ui/TableHeader"
 import { Table } from 'antd';
 import { OrderTableColumns, OrderTableData } from '../utils/table';
+import OrderModal from "../ui/modal/OrderModal";
 const rowSelection = {
     onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-      console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+        console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
     },
     getCheckboxProps: (record: DataType) => ({
-      disabled: record.name === 'Disabled User', // Column configuration not to be checked
-      name: record.name,
+        disabled: record.name === 'Disabled User', // Column configuration not to be checked
+        name: record.name,
     }),
-  };
+};
 
 function Order() {
     return (
@@ -26,6 +27,7 @@ function Order() {
                     />
                 </div>
             </div>
+            <OrderModal />
         </div>
     )
 }
