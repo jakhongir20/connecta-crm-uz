@@ -4,7 +4,7 @@ import { useModal } from '../../context/Modal';
 
 
 export default function LeadModal() {
-  const { hideModal }= useModal()
+  const { hideModal } = useModal()
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -14,9 +14,10 @@ export default function LeadModal() {
 
   return (
     <Modal title='New Lead' onSubmit={onSubmit}>
-      <h1>
-        Lead Modal
-      </h1>
+      <div className='modal__row'>
+        <div className='modal__col'>1</div>
+        <div className='modal__col'>2</div>
+      </div>
     </Modal>
   )
 }
