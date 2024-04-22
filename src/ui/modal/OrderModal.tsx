@@ -60,11 +60,33 @@ export default function OrderModal() {
                 </InputCol>
               </InputRow>
               {/* --------- */}
-              <InputRow>
+
+              <div className='vehicle__details'>
+                <div className='vehicle__details__left'>
+                    <Label>Lot</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_lot' />
+                </div>
+                <div className='vehicle__details__right'>
+                    <Label>VIN</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_vin' />
+                </div>
+              </div>
+
+              <div className='vehicle__details'>
+                <div className='vehicle__details__left'>
+                    <Label>Color</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_color' />
+                </div>
+                <div className='vehicle__details__right'>
+                    <Label>Plate</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_plate' />
+                </div>
+              </div>
+
+
+              {/* <InputRow>
                 <InputCol>
-                  <Label>
-                    Lot
-                  </Label>
+                 
                   <Input type='text' placeholder='Empty' name='vehicle_model' />
                 </InputCol>
                 <InputCol>
@@ -73,8 +95,9 @@ export default function OrderModal() {
                   </Label>
                   <Input type='text' placeholder='Empty' name='vehicle_model' />
                 </InputCol>
-              </InputRow>
-              <InputRow>
+              </InputRow> */}
+
+              {/* <InputRow>
                 <InputCol>
                   <Label>
                     Color
@@ -87,7 +110,8 @@ export default function OrderModal() {
                   </Label>
                   <Input type='text' placeholder='Empty' name='vehicle_model' />
                 </InputCol>
-              </InputRow>
+              </InputRow> */}
+
               {/* ---------- */}
 
             </DownCollapse>
@@ -250,7 +274,7 @@ export default function OrderModal() {
               <InputRow>
                 <InputCol>
                   <Label>
-                  Business name
+                    Business name
                   </Label>
                 </InputCol>
 
@@ -261,7 +285,7 @@ export default function OrderModal() {
               <InputRow>
                 <InputCol>
                   <Label>
-                  Business phone
+                    Business phone
                   </Label>
                 </InputCol>
 
@@ -272,7 +296,7 @@ export default function OrderModal() {
               <InputRow>
                 <InputCol>
                   <Label>
-                  Contact person
+                    Contact person
                   </Label>
                 </InputCol>
 
@@ -280,6 +304,11 @@ export default function OrderModal() {
                   <Input type='text' placeholder='Empty' name="delivery_contact_person*" />
                 </InputCol>
               </InputRow>
+
+              <div className=''></div>
+
+                
+
             </DownCollapse>
 
 
@@ -305,7 +334,7 @@ export default function OrderModal() {
             </div>
             <div className='form__footer'>
               <Label>
-              CM note
+                CM note
               </Label>
               <Input type='text' placeholder='Empty' name='cm_note' />
             </div>
