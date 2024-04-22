@@ -1,0 +1,85 @@
+.tabs {
+  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  overflow: hidden;
+  .tab-icon {
+    width: 20px;
+    &.default-icon {
+      display: inline-block;
+    }
+    &.active-icon {
+      display: none;
+    }
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card.ant-tabs-top
+    > .ant-tabs-nav
+    .ant-tabs-tab-active,
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card.ant-tabs-top
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-tab-active {
+    .default-icon {
+      display: none;
+    }
+    .active-icon {
+      display: inline-block;
+    }
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card
+    > .ant-tabs-nav
+    .ant-tabs-tab,
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-tab {
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    &:hover {
+      background: linear-gradient(0deg, #ddf2fd 0%, #ddf2fd 100%), #f1f1f1;
+      span {
+        color: $color-gray;
+      }
+    }
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs .ant-tabs-tab {
+    color: $color-gray;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card.ant-tabs-top
+    > .ant-tabs-nav
+    .ant-tabs-tab-active,
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card.ant-tabs-top
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-tab-active {
+    border-bottom-color: #086ed6;
+    background: linear-gradient(0deg, #ddf2fd 0%, #ddf2fd 100%), #f1f1f1;
+    &:hover {
+      span {
+        color: #1677ff;
+      }
+    }
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs
+    .ant-tabs-tab-btn
+    .ant-tabs-tab-icon:not(:last-child) {
+    margin-inline-end: 10px;
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card
+    > .ant-tabs-nav
+    .ant-tabs-tab,
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs-card
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-tab {
+    // border: none;
+    padding: 7px 14px;
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs
+    .ant-tabs-content-holder {
+    padding: 8px;
+    padding-top: 0;
+  }
+}

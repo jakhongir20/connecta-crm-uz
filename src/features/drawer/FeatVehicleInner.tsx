@@ -56,7 +56,7 @@ function FeatVehicleInner() {
         </Select>
       </Form.Item>
 
-      {/* <Form.Item
+      <Form.Item
         name="vehicleModel"
         label="Vehicle model"
         rules={[{ required: true, message: '' }]}
@@ -64,13 +64,13 @@ function FeatVehicleInner() {
         <Select
           value={formData.vehicleModel}
           style={{ width: 200, float: 'inline-end', height: 24 }}
-          onChange={handleFieldChange('vehicleModel')}
+          onChange={(e) => handleFieldChange('vehicleModel', e)}
         >
           <Select.Option value="model">model</Select.Option>
           <Select.Option value="model1">model1</Select.Option>
           <Select.Option value="model2">model2</Select.Option>
         </Select>
-      </Form.Item> */}
+      </Form.Item>
     </Form>
   );
 }

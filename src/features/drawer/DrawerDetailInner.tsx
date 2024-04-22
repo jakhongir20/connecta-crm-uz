@@ -4,6 +4,7 @@ import { useState } from 'react';
 import FeatCondition from './FeatCondition';
 import FeatVehicle from './FeatVehicle';
 import FeatVehicleInner from './FeatVehicleInner';
+import FeatConditionInner from './FeatConditionInner';
 
 function DetailInner() {
   const [openPanels, setOpenPanels] = useState<string[]>([]);
@@ -46,10 +47,11 @@ function DetailInner() {
         />
       ),
       children: (
-        <p>
-          Condition Ali Brain blabval Lorem <br /> ipsum dolor, sit <br /> amet
-          consectetur adipisicing elit. Ipsam, distinctio!
-        </p>
+        <div className="detail-inner">
+          <div className="detail-inner__form">
+            <FeatConditionInner />
+          </div>
+        </div>
       ),
       showArrow: false,
     },

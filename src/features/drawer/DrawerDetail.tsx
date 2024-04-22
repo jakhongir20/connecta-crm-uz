@@ -1,87 +1,131 @@
 import type { CollapseProps } from 'antd';
 import { Button, Collapse } from 'antd';
+import { useState } from 'react';
 import DetailInner from './DrawerDetailInner';
 import { IconArrow } from './DrawerFeatures';
 function Detail() {
-  const text = `
-    A dog is a type of domesticated animal.
-    Known for its loyalty and faithfulness,
-    it can be found as a welcome guest in many households across the world.
-  `;
+  const [openPanels, setOpenPanels] = useState<string[]>([]);
 
-  type BoxHeaderType = {
-    label: string;
-    value: string;
-  };
+  const BoxHeader = ({ keyValue, label, value, onChange }) => {
+    const Content = () => {
+      let element = null;
 
-  const BoxHeader = ({ label, value }: BoxHeaderType) => {
-    const detailContent = (
-      <>
-        <Button
-          onClick={(e) => {
-            e.stopPropagation();
-            console.log('CD Price');
-          }}
-          type="primary"
-          size="small"
-          danger
-        >
-          CD Price
-        </Button>
-        <div className="box-header__edit ml-10">
-          <img src="./img/drawer/pen.svg" alt="" />
-        </div>
-      </>
-    );
-    const personContent = (
-      <>
-        <div className="box-header__edit ml-10">
-          <img src="./img/drawer/pen.svg" alt="" />
-        </div>
-        <div className="box-header__more ml-10">
-          <img src="./img/drawer/more-2.svg" alt="" />
-        </div>
-      </>
-    );
+      switch (value) {
+        case 'detail':
+          element = (
+            <>
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log('CD Price');
+                }}
+                type="primary"
+                size="small"
+                danger
+              >
+                CD Price
+              </Button>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onChange(keyValue);
+                  console.log('Edit');
+                }}
+                className="box-header__edit ml-10"
+              >
+                <img src="./img/drawer/pen.svg" alt="" />
+              </div>
+            </>
+          );
+          break;
+        case 'person':
+          element = (
+            <>
+              <div className="box-header__edit ml-10" onClick={() => {}}>
+                <img src="./img/drawer/pen.svg" alt="" />
+              </div>
+              <div className="box-header__more ml-10">
+                <img src="./img/drawer/more-2.svg" alt="" />
+              </div>
+            </>
+          );
+          break;
+        case 'other':
+          element = 'other';
+          break;
+      }
+
+      return element;
+    };
 
     return (
       <div className="box-header d-flex align-center justify-between">
         <span className="box-header__label">{label}</span>
         <div className="d-flex align-center">
-          {value === 'detail' ? detailContent : personContent}
+          <Content />
         </div>
       </div>
     );
   };
 
-  const detailContentInner = <DetailInner />;
+  const onChange = (key: string | string[]) => {
+    const keyString = Array.isArray(key) ? key[0] : key;
+    setOpenPanels(
+      openPanels.includes(keyString)
+        ? openPanels.filter((item) => item !== keyString)
+        : [...openPanels, keyString],
+    );
+  };
+
+  const onChangeCollapse = (panelKey: string[] | string) => {
+    if (Array.isArray(panelKey)) {
+      setOpenPanels(panelKey);
+    } else {
+      setOpenPanels((currentPanels) => {
+        const currentSet = new Set(currentPanels);
+        if (currentSet.has(panelKey)) {
+          currentSet.delete(panelKey);
+        } else {
+          currentSet.add(panelKey);
+        }
+        return Array.from(currentSet);
+      });
+    }
+  };
 
   const items: CollapseProps['items'] = [
     {
-      key: 1,
-      label: <BoxHeader label="Details" value="detail" />,
-      children: detailContentInner,
+      key: '1',
+      label: (
+        <BoxHeader
+          keyValue={'1'}
+          label="Details"
+          value="detail"
+          onChange={onChange}
+        />
+      ),
+      children: <DetailInner />,
     },
     {
-      key: 2,
-      label: <BoxHeader label="Person" value="person" />,
-      children: <p>{text}</p>,
+      key: '2',
+      label: (
+        <BoxHeader
+          keyValue={'2'}
+          label="Person"
+          value="person"
+          onChange={onChange}
+        />
+      ),
+      children: <p>{'text'}</p>,
     },
   ];
 
-  function handleCollapse(key: number) {
-    const isOpen = items?.map((item) => item.key).includes(key);
-    console.log(
-      isOpen,
-      items?.map((item) => item.key),
-      key,
-    );
-  }
-
   return (
     <Collapse
-      onChange={(key) => handleCollapse(Number(key))}
+      activeKey={openPanels}
+      onChange={onChangeCollapse}
       ghost
+      collapsible="header"
       expandIcon={IconArrow}
       items={items}
     />
