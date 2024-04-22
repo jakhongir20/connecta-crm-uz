@@ -205,10 +205,19 @@ export default function OrderModal() {
                 </InputCol>
 
                 <InputCol>
-                  <Input type='text' placeholder='Empty' name='contact_person' />
+                  <Input type='text' placeholder='Empty' name='pickup_contact_person' />
                 </InputCol>
               </InputRow>
-
+              <div className='phone__details'>
+                <div className='phone__details__left'>
+                  <Label>Phone</Label>
+                  <Input type='text' placeholder='Empty' name='pickup_phone__first'/>
+                </div>
+                <div className='phone__details__right'>
+                  <Label>Second</Label>
+                  <Input type='text' placeholder='Empty' name='pickup_phone__second'/>
+                </div>
+              </div>
               <InputRow>
                 <InputCol>
                   <Label>
@@ -217,7 +226,7 @@ export default function OrderModal() {
                 </InputCol>
 
                 <InputCol>
-                  <Input type='text' placeholder='Empty' name='buyer_number' />
+                  <Input type='text' placeholder='Empty' name='pickup_buyer_number' />
                 </InputCol>
               </InputRow>
 
@@ -305,7 +314,16 @@ export default function OrderModal() {
                 </InputCol>
               </InputRow>
 
-              <div className=''></div>
+              <div className='phone__details'>
+                <div className='phone__details__left'>
+                  <Label>Phone</Label>
+                  <Input type='text' placeholder='Empty' name='delivery_phone__first'/>
+                </div>
+                <div className='phone__details__right'>
+                  <Label>Second</Label>
+                  <Input type='text' placeholder='Empty' name='delivery_phone__second'/>
+                </div>
+              </div>
 
                 
 
