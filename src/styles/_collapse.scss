@@ -1,0 +1,152 @@
+// upcollapse
+.collapse {
+  // height: 100%;
+  transition: 5s;
+  &__header {
+    @include flexbox();
+    align-items: center;
+    gap: 5px;
+    color: #21232c;
+    font-family: $fontfamily;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.5s;
+    img {
+      width: 14px;
+      height: 14px;
+      transition: 0.4s ease;
+    }
+    img.active__drop {
+      transform: rotate(180deg);
+    }
+  }
+  &__body {
+    // max-height: 2000px;
+    height: auto;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  &__hide {
+    // max-height: 0;
+    height: 0;
+  }
+}
+
+// downcollapse
+.down__collapse {
+  margin-top: 10px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  transition: 0.4s;
+  //   background: #eaeaea;
+  &__header {
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  &__header-item {
+    @include flexbox();
+    align-items: center;
+    color: #164863;
+    font-family: $fontfamily;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    gap: 10px;
+    cursor: pointer;
+    img {
+      object-fit: contain;
+    }
+  }
+  &__body {
+    // max-height: 2000px;
+    height: auto;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  &__hide {
+    // max-height: 0;
+    height: 0;
+  }
+}
+.down__collapse:hover {
+  background: #eaeaea;
+}
+.form__controller {
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  @include flexbox();
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  transition: 0.2s;
+  &__header-item {
+    @include flexbox();
+    align-items: center;
+    color: #164863;
+    font-family: $fontfamily;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+.form__controller:hover {
+  background: #eaeaea;
+}
+
+
+// inputRow
+.input__row{
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+   
+    
+    label {
+      color: #21232c;
+      font-family: $fontfamily;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    // background-color: red;
+}
+
+.input__col{
+  width: 40%;
+  .ant-picker {
+    width: 100%;
+  }
+}
+.input__col:nth-child(2){
+  width: 60%;
+}
+.form__footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+   gap: 5px;
+  label{
+    color: #21232c;
+    font-family: $fontfamily;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+   
+  }
+  input{
+    width: 82%;
+  }
+}

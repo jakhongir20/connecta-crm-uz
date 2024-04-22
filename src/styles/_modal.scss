@@ -26,6 +26,7 @@
     position: relative;
     z-index: 9991;
     border-radius: 4px 4px 4px 4px;
+    overflow: hidden;
   }
   &__header {
     height: 50px;
