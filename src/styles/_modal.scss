@@ -18,15 +18,15 @@
     opacity: 1;
     visibility: visible;
   }
-
   &__content {
     width: 100%;
-    max-width: 840px;
+    max-width: 420px;
     margin-top: 56px;
     background: #fff;
     position: relative;
     z-index: 9991;
     border-radius: 4px 4px 4px 4px;
+    overflow: hidden;
   }
   &__header {
     height: 50px;
@@ -49,8 +49,8 @@
     gap: 10px;
   }
   &__body {
-    padding: 20px 15px;
-    max-height: calc(100vh - 150px);
+    // padding: 20px 15px;
+    max-height: calc(100vh - 85px);
     overflow-y: auto;
   }
   &__cancel {
@@ -76,10 +76,23 @@
     line-height: normal;
     padding: 3px 12px;
     border-radius: 4px;
-background:  #086ED6;
+    background: #086ed6;
   }
   &__cancel:hover,
   &__save:hover {
     opacity: 0.8;
+  }
+  &__row {
+    @include flexbox();
+  }
+  &__col {
+    width: 50%;
+    padding: 15px;
+  }
+  &__col:first-child {
+    border-right: 1px solid #d1d1d1;
+  }
+  &__col:nth-child(2) {
+    background: #eaeaea;
   }
 }
