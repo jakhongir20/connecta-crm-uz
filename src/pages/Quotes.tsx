@@ -2,7 +2,7 @@
 import TableHeader from "../ui/TableHeader";
 import { Table } from 'antd';
 import { QuotesTableColumns, QuotesTableData } from '../utils/table';
-import QuatesModal from "../ui/modal/OrderModal";
+import QuatesModal from "../ui/modal/QuatesModal";
 
 
 
