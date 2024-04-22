@@ -8,20 +8,19 @@ import Input from '../Form/Input';
 import InputCol from '../Form/InputCol';
 import Select from '../Form/Select';
 import UseDatePicker from '../DatePicker/DatePicker';
-export default function QuatesModal() {
+export default function OrderModal() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    e.target.reset()
+
+    const formData = new FormData(e.target);
+    const formProps = Object.fromEntries(formData);
+    console.log(formProps);
   }
 
   return (
-    // <Modal title='New Lead' onSubmit={onSubmit}>
-    //   <h1>
-    //     Quates Modal
-    //   </h1>
-    // </Modal>
-    
+
+
     <Modal title='New Order' onSubmit={onSubmit}>
       <div className='modal__row'>
         <div className='modal__col'>
@@ -35,7 +34,7 @@ export default function QuatesModal() {
                 </InputCol>
 
                 <InputCol>
-                  <UseDatePicker type='year'  name='vehicle_year'/>
+                  <UseDatePicker type='year' name='vehicle_year' />
                 </InputCol>
               </InputRow>
               <InputRow>
@@ -60,6 +59,61 @@ export default function QuatesModal() {
                   <Input type='text' placeholder='Empty' name='vehicle_model' />
                 </InputCol>
               </InputRow>
+              {/* --------- */}
+
+              <div className='vehicle__details'>
+                <div className='vehicle__details__left'>
+                    <Label>Lot</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_lot' />
+                </div>
+                <div className='vehicle__details__right'>
+                    <Label>VIN</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_vin' />
+                </div>
+              </div>
+
+              <div className='vehicle__details'>
+                <div className='vehicle__details__left'>
+                    <Label>Color</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_color' />
+                </div>
+                <div className='vehicle__details__right'>
+                    <Label>Plate</Label>
+                    <Input type='text' placeholder='Empty' name='vehicle_plate' />
+                </div>
+              </div>
+
+
+              {/* <InputRow>
+                <InputCol>
+                 
+                  <Input type='text' placeholder='Empty' name='vehicle_model' />
+                </InputCol>
+                <InputCol>
+                  <Label>
+                    VIN
+                  </Label>
+                  <Input type='text' placeholder='Empty' name='vehicle_model' />
+                </InputCol>
+              </InputRow> */}
+
+              {/* <InputRow>
+                <InputCol>
+                  <Label>
+                    Color
+                  </Label>
+                  <Input type='text' placeholder='Empty' name='vehicle_model' />
+                </InputCol>
+                <InputCol>
+                  <Label>
+                    Plate
+                  </Label>
+                  <Input type='text' placeholder='Empty' name='vehicle_model' />
+                </InputCol>
+              </InputRow> */}
+
+              {/* ---------- */}
+
             </DownCollapse>
 
             <FormControl title="Condition">
@@ -75,6 +129,17 @@ export default function QuatesModal() {
             </FormControl>
 
             <DownCollapse title='Pickup'>
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Pickup address
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name='pickup_address' />
+                </InputCol>
+              </InputRow>
               <InputRow>
                 <InputCol>
                   <Label>
@@ -108,11 +173,71 @@ export default function QuatesModal() {
                   <Input type='text' placeholder='Empty' name='pickup_zip' />
                 </InputCol>
               </InputRow>
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Business name
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name='pickup_business_name' />
+                </InputCol>
+              </InputRow>
+
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Business phone
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name='pickup_business_phone' />
+                </InputCol>
+              </InputRow>
+
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Contact person
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name='contact_person' />
+                </InputCol>
+              </InputRow>
+
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Buyer number
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name='buyer_number' />
+                </InputCol>
+              </InputRow>
+
 
 
             </DownCollapse>
 
             <DownCollapse title='Delivery'>
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Delivery address
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name='delivery_address' />
+                </InputCol>
+              </InputRow>
+
               <InputRow>
                 <InputCol>
                   <Label>
@@ -146,6 +271,44 @@ export default function QuatesModal() {
                   <Input type='text' placeholder='Empty' name="delivery_zip" />
                 </InputCol>
               </InputRow>
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Business name
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name="delivery_business_name" />
+                </InputCol>
+              </InputRow>
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Business phone
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name="delivery_business_phone" />
+                </InputCol>
+              </InputRow>
+              <InputRow>
+                <InputCol>
+                  <Label>
+                    Contact person
+                  </Label>
+                </InputCol>
+
+                <InputCol>
+                  <Input type='text' placeholder='Empty' name="delivery_contact_person*" />
+                </InputCol>
+              </InputRow>
+
+              <div className=''></div>
+
+                
+
             </DownCollapse>
 
 
@@ -155,7 +318,7 @@ export default function QuatesModal() {
               </Select>
             </FormControl>
             <FormControl title="Est. Ship Date">
-              <UseDatePicker type={"date"} name='est_ship_date'/>
+              <UseDatePicker type={"date"} name='est_ship_date' />
             </FormControl>
             <FormControl title="Source">
               <Select name='source'>
@@ -163,6 +326,12 @@ export default function QuatesModal() {
               </Select>
             </FormControl>
 
+            <div className='form__footer'>
+              <Label>
+                Cd note
+              </Label>
+              <Input type='text' placeholder='Empty' name='cd_note' />
+            </div>
             <div className='form__footer'>
               <Label>
                 CM note
@@ -181,7 +350,7 @@ export default function QuatesModal() {
               <Input type='text' placeholder='Empty' name='person_email' />
             </FormControl>
             <FormControl title="Phone">
-              <Input type='number'  placeholder='Empty' name='person_phone' />
+              <Input type='number' placeholder='Empty' name='person_phone' />
             </FormControl>
           </UpCollapse>
 

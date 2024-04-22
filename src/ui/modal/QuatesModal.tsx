@@ -1,5 +1,5 @@
 import Modal from './Modal'
-export default function OrderModal() {
+export default function QuatesModal() {
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -7,9 +7,9 @@ export default function OrderModal() {
   }
 
   return (
-    <Modal title='New Lead' onSubmit={onSubmit}>
+    <Modal title='New Quates' onSubmit={onSubmit}>
       <h1>
-        order Modal
+      New Quates
       </h1>
     </Modal>
   )
