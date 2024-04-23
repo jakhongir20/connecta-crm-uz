@@ -1,5 +1,5 @@
 
-export default function InboxHeader() {
+export default function TableSearchButtons() {
   return (
     <div className="inbox__header">
       <div className="inbox__left">

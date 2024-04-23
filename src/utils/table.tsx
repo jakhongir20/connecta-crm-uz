@@ -1,3 +1,4 @@
+import RadioButton from "../ui/Form/RadioButton";
 import TableDropdown from "../ui/TableDropdown";
 // =======Lead===========
 export const LeadTableColumns = [
@@ -429,4 +430,118 @@ export const ContactTableData = [
         source: 'Referral',
         added: '01/21/2024 09:02 AM',
     }
+];
+
+
+// task
+
+export const TaskTableColumns = [
+
+    {
+        title: 'Done',
+        dataIndex: 'done',
+        render:(text:string)=> <RadioButton item={text}/>
+    },
+    {
+        title: 'Task ID',
+        dataIndex: 'task_id',
+    },
+    {
+        title: 'ID',
+        dataIndex: 'id',
+    },
+    {
+        title: 'Created',
+        dataIndex: 'created',
+    },
+    {
+        title: 'Task',
+        dataIndex: 'task',
+        render: () => <a ><img src="./img/dt_table/task_phone.png" alt="" width="20px" height="20px" /></a>
+
+    },
+    {
+        title: 'Title',
+        dataIndex: 'title',
+    },
+
+
+    {
+        title: 'Customer',
+        dataIndex: 'customer'
+    },
+    {
+        title: 'Phone',
+        dataIndex: 'phone',
+        render: (text: string) => <div className="table__phone"><img src="./img/dt_table/call.svg" alt="" width="20px" height="20px"  /><span>{text}</span></div>
+
+    },
+    {
+        title: 'Deadline',
+        dataIndex: 'deadline',
+    },
+    {
+        title: 'User',
+        dataIndex: 'user',
+        render: (name: string) => <div className="table__img__container" style={{ display: "flex", alignItems: "center", gap: "5px" }}><img src="./img/dt_table/default_user_image.png" alt="" className="table__user__img" />  <span>{name}</span> </div>
+
+    },
+
+];
+
+
+
+export const TaskTableData = [
+    {
+        key: '1',
+        done: 'sssss',
+        task_id: '10000',
+        id: "110000",
+        created: '01/15/2024 09:02 AM',
+        task: '',
+        title: 'Need to call back,',
+        customer: 'John Smith',
+        phone: '(999) 999-9999',
+        deadline: '01/21/2024 09:02 AM',
+        user: 'Ali Brian'
+    },
+    {
+        key: '2',
+        done: 'dddd',
+        task_id: '10000',
+        id: "110000",
+        created: '01/15/2024 09:02 AM',
+        task: '',
+        title: 'Need to call back,',
+        customer: 'John Smith',
+        phone: '(999) 999-9999',
+        deadline: '01/21/2024 09:02 AM',
+        user: 'Ali Brian'
+    },
+    {
+        key: '3',
+        done: 'ffff',
+        task_id: '10000',
+        id: "110000",
+        created: '01/15/2024 09:02 AM',
+        task: '',
+        title: 'Need to call back,',
+        customer: 'John Smith',
+        phone: '(999) 999-9999',
+        deadline: '01/21/2024 09:02 AM',
+        user: 'Ali Brian'
+    },
+    {
+        key: '4',
+        done: 'ooo',
+        task_id: '10000',
+        id: "110000",
+        created: '01/15/2024 09:02 AM',
+        task: '',
+        title: 'Need to call back,',
+        customer: 'John Smith',
+        phone: '(999) 999-9999',
+        deadline: '01/21/2024 09:02 AM',
+        user: 'Ali Brian'
+    },
 ];
