@@ -1,7 +1,6 @@
 import TableHeader from "../ui/TableHeader"
 import { Table } from 'antd';
-import { OrderTableColumns, OrderTableData } from '../utils/table';
-import InboxHeader from "../ui/InboxHeader";
+import { ContactTableColumns, ContactTableData } from '../utils/table';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -16,8 +15,7 @@ const rowSelection = {
 function Inbox() {
   return (
     <div className="inbox">
-      <TableHeader pageName="inbox" />
-      <InboxHeader />
+      <TableHeader pageName="contact" />
       <div className="quotes-table">
         <div className='table__container'>
           <Table
@@ -25,8 +23,8 @@ function Inbox() {
               ...rowSelection,
 
             }}
-            columns={OrderTableColumns}
-            dataSource={OrderTableData}
+            columns={ContactTableColumns}
+            dataSource={ContactTableData}
           />
         </div>
       </div>
