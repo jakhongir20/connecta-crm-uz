@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 const lazyload = (name: string) => lazy(() => import(`../../pages/${name}`));
-const lazyloadInner = (name: string) =>
-  lazy(() => import(`../../pages/settingPages/${name}`));
+const lazyloadInner = (name: string) =>lazy(() => import(`../../pages/settingPages/${name}`));
 
 export type MenuItem = {
   title: string;
@@ -91,6 +90,6 @@ export const getMenuData: MenuData = [
     icon_active: '09_active',
     component: lazyload('Settings'),
     roles: ['admin', 'user'],
-    elements:elements,
+    elements,
   },
 ];
