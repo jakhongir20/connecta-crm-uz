@@ -41,4 +41,13 @@ export const getMenuData: MenuData = [
     component: lazyload('Orders'),
     roles: ['admin', 'user'],
   },
+  {
+    title: 'Contact',
+    key: '__contact',
+    path: '/contact',
+    icon: '06',
+    icon_active: '06_active',
+    component: lazyload('Contact'),
+    roles: ['admin', 'user'],
+  },
 ];
