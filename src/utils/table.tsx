@@ -333,7 +333,6 @@ export const OrderTableData = [
 ];
 
 //   contact
-
 export const ContactTableColumns = [
 
     {
