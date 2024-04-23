@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 const lazyload = (name: string) => lazy(() => import(`../../pages/${name}`));
-const lazyloadInner = (name: string) => lazy(() => import(`../../pages/settingPages/${name}`));
+const lazyloadInner = (name: string) =>
+  lazy(() => import(`../../pages/settingPages/${name}`));
 
 export type MenuItem = {
   title: string;
@@ -10,8 +11,29 @@ export type MenuItem = {
   icon_active: string;
   component: React.FC<unknown>;
   roles: string[];
-  elements?:{path:string,el:React.FC<unknown>}[]
+  elements?: { path: string; el: React.FC<unknown> }[];
 };
+
+
+const elements = [
+  { path: '/setting/users', el: lazyloadInner('Users') },
+  { path: '/setting/teams', el: lazyloadInner('Teams') },
+  { path: '/setting/roles', el: lazyloadInner('AccessRoles') },
+  { path: '/setting/providers', el: lazyloadInner('Providers') },
+  { path: '/setting/distribution', el: lazyloadInner('Distribution') },
+  { path: '/setting/lead-parsing', el: lazyloadInner('LeadParsing') },
+  { path: '/setting/ground', el: lazyloadInner('Ground') },
+  { path: '/setting/regions', el: lazyloadInner('HawaiiAndAlaska') },
+  { path: '/setting/international', el: lazyloadInner('International') },
+  { path: '/setting/name', el: lazyloadInner('CompanyName') },
+  { path: '/setting/merchant', el: lazyloadInner('Merchant') },
+  { path: '/setting/payment', el: lazyloadInner('PaymentApps') },
+  { path: '/setting/voip', el: lazyloadInner('VoIP') },
+  { path: '/setting/templates', el: lazyloadInner('Templates') },
+]
+
+
+
 
 type MenuData = MenuItem[];
 
@@ -43,7 +65,7 @@ export const getMenuData: MenuData = [
     component: lazyload('Orders'),
     roles: ['admin', 'user'],
   },
-   {
+  {
     title: 'Task',
     key: '__task',
     path: '/task',
@@ -69,7 +91,6 @@ export const getMenuData: MenuData = [
     icon_active: '09_active',
     component: lazyload('Settings'),
     roles: ['admin', 'user'],
-    elements:[{path:"/setting/users",el:lazyloadInner("Users")}]
+    elements:elements,
   },
- 
 ];
