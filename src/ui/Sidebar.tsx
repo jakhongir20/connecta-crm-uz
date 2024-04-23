@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { getMenuData } from "../services/menu";
-
+import logo from "../../public/img/logo.svg"
 function Sidebar() {
   const user = {
     roles: ["admin", "user"]
@@ -22,7 +22,7 @@ function Sidebar() {
         <ul className="nav__list">
           <li>
             <a className="nav__link" href="/"
-            ><img src="./img/logo.svg" alt="Logo"
+            ><img src={logo} alt="Logo"
               /></a>
           </li>
           {filteredMenu.map(({ key, path, icon, icon_active }) => {
@@ -30,7 +30,9 @@ function Sidebar() {
               <li key={key}>
                 <NavLink to={path} className={({ isActive }) => isActive ? 'nav__link _active' : 'nav__link '}
                 >
-                  {({ isActive }) => <img src={`./img/sidebar/${isActive ? icon_active : icon}.svg`} alt=""
+                  {/* {({ isActive }) => <img src={`./img/sidebar/${isActive ? icon_active : icon}.svg`} alt={isActive ? icon_active : icon} */}
+                  {({ isActive }) => <img src={isActive ? icon_active : icon} alt={isActive ? icon_active : icon}
+
                   />}
                 </NavLink>
               </li>

@@ -1,10 +1,9 @@
-
-import React from 'react';
 import { Collapse } from 'antd'
 import { NavLink } from 'react-router-dom';
 
-
 export default function SettingSidebar() {
+
+
   return (
     <div className='setting__sidebar'>
       <Collapse
@@ -15,7 +14,7 @@ export default function SettingSidebar() {
             key: '1', label: 'User Management',
             children:
               <ul className='setting__sidebar__menu'>
-                <li> <NavLink to="/setting/users">Users</NavLink></li>
+                <li> <NavLink  to="/setting/users">Users</NavLink></li>
                 <li> <NavLink to="/setting/teams">Teams</NavLink></li>
                 <li> <NavLink to="/setting/roles">Access roles</NavLink></li>
               </ul>

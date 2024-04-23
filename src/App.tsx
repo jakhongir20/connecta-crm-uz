@@ -39,7 +39,7 @@ function App() {
                           {createElement(menu.component)}
                         </ProtectedRoute>
                       }>
-                        { menu.elements&& menu.elements.map(item=><Route path={item.path} element={<>{createElement(item.el)}</>}/>)}
+                        { menu.elements&& menu.elements.map(item=><Route key={item.path} path={item.path} element={<>{createElement(item.el)}</>}/>)}
                       </Route>
                     );
                   })}
