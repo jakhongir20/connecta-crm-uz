@@ -1,0 +1,40 @@
+.setting {
+  &__sidebar {
+    width: 257px;
+    min-width: 257px;
+    border-right: 1px solid #d1d1d1;
+    background: #fff;
+    position: fixed;
+    top: 56px;
+    left: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    padding-top: 13px;
+  }
+  &__content {
+    margin-left: 257px;
+  }
+  .ant-collapse {
+    background: none !important;
+    border: 0;
+    padding: 0;
+  }
+  .ant-collapse-item {
+    border: 0 !important;
+    margin-bottom: 16px;
+  }
+  .ant-collapse-content {
+    border: 0;
+  }
+  .ant-collapse-header {
+    padding: 0 !important;
+    color:  #21232c !important;
+    font-family: $fontfamily;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .ant-collapse-content-box {
+    padding: 0 !important;
+  }
+}

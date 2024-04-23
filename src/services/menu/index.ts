@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 const lazyload = (name: string) => lazy(() => import(`../../pages/${name}`));
+const lazyloadInner = (name: string) => lazy(() => import(`../../pages/settingPages/${name}`));
 
 export type MenuItem = {
   title: string;
@@ -9,6 +10,7 @@ export type MenuItem = {
   icon_active: string;
   component: React.FC<unknown>;
   roles: string[];
+  elements?:{path:string,el:React.FC<unknown>}[]
 };
 
 type MenuData = MenuItem[];
@@ -58,6 +60,16 @@ export const getMenuData: MenuData = [
     icon_active: '06_active',
     component: lazyload('Contact'),
     roles: ['admin', 'user'],
+  },
+  {
+    title: 'Setting',
+    key: '__setting',
+    path: '/setting',
+    icon: '09',
+    icon_active: '09_active',
+    component: lazyload('Settings'),
+    roles: ['admin', 'user'],
+    elements:[{path:"/setting/users",el:lazyloadInner("Users")}]
   },
  
 ];
