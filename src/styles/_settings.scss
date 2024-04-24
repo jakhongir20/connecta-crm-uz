@@ -24,7 +24,7 @@
         width: 100%;
         transition: 0.2s;
       }
-      a:hover{
+      a:hover {
         color: #086ed6;
         border-right: 2px solid #086ed6;
         background: #ddf2fd;
@@ -64,3 +64,33 @@
     padding: 0 !important;
   }
 }
+
+.status__active {
+  color: #e52e2e;
+}
+.user__name,
+.user__count {
+  border-radius: 4px;
+  background: #ddf2fd;
+  margin-right: 10px;
+  color: #21232c;
+  font-family: $fontfamily;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 2px 5px;
+}
+.user__count{
+  background: none;
+  padding: 0;
+}
+.user__empty{
+  color: #A4A4A4;
+font-family: $fontfamily;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+

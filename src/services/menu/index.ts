@@ -29,6 +29,7 @@ export type MenuItem = {
 };
 
 const elements = [
+  { path: '/setting/', el: lazyloadInner('ReplaceCurreentPage') },
   { path: '/setting/users', el: lazyloadInner('Users') },
   { path: '/setting/teams', el: lazyloadInner('Teams') },
   { path: '/setting/roles', el: lazyloadInner('AccessRoles') },
