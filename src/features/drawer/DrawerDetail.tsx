@@ -2,7 +2,7 @@ import type { CollapseProps } from 'antd';
 import { Button, Collapse } from 'antd';
 import { useState } from 'react';
 import DetailInner from './DrawerDetailInner';
-import { IconArrow } from './DrawerFeatures';
+import { DrawerContentHead, IconArrow } from './DrawerFeatures';
 function Detail() {
   const [openPanels, setOpenPanels] = useState<string[]>([]);
 
@@ -59,12 +59,9 @@ function Detail() {
     };
 
     return (
-      <div className="box-header d-flex align-center justify-between">
-        <span className="box-header__label">{label}</span>
-        <div className="d-flex align-center">
-          <Content />
-        </div>
-      </div>
+      <DrawerContentHead label={label}>
+        <Content />
+      </DrawerContentHead>
     );
   };
 

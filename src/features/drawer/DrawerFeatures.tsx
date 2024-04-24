@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { classNames } from '../../utils/helpers';
 
 export const IconArrow = () => (
@@ -35,6 +36,21 @@ export const DetailHeaderInfo = ({
         <img src={`./img/drawer/${icon}.svg`} alt="" />
       </div>
       <div className="detail__label ml-10">{label}</div>
+    </div>
+  );
+};
+
+export const DrawerContentHead = ({
+  label,
+  children,
+}: {
+  label: string;
+  children?: ReactNode;
+}) => {
+  return (
+    <div className="box-header d-flex align-center justify-between">
+      <span className="box-header__label">{label}</span>
+      <div className="d-flex align-center">{children}</div>
     </div>
   );
 };
