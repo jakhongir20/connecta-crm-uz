@@ -1,6 +1,9 @@
 import type { TabsProps } from 'antd';
-import { Tabs, theme } from 'antd';
+import { Button, Flex, Tabs, theme } from 'antd';
 import StickyBox from 'react-sticky-box';
+import TabEmail from './TabEmail';
+import TabFiles from './TabFiles';
+import Notes from './TabNotes';
 
 const tabData = [
   {
@@ -21,7 +24,17 @@ const tabData = [
         />
       </>
     ),
-    children: <p>tab content</p>,
+    children: (
+      <div>
+        <Notes />
+        <Flex className="p-5" gap="small" wrap="wrap">
+          <Button size="small">Cancel</Button>
+          <Button type="primary" size="small">
+            Save
+          </Button>
+        </Flex>
+      </div>
+    ),
   },
   {
     key: '2',
@@ -36,7 +49,7 @@ const tabData = [
         />
         <img
           className="tab-icon active-icon"
-          src="./img/drawer/tab/task_a.svg"
+          src="./img/drawer/tab/task.svg"
           alt=""
         />
       </>
@@ -56,12 +69,52 @@ const tabData = [
         />
         <img
           className="tab-icon active-icon"
-          src="./img/drawer/tab/phone_a.svg"
+          src="./img/drawer/tab/phone.svg"
           alt=""
         />
       </>
     ),
     children: <p>tab content 3</p>,
+  },
+  {
+    key: '4',
+    label: 'Email',
+    value: 'email',
+    icon: (
+      <>
+        <img
+          className="tab-icon default-icon"
+          src="./img/drawer/tab/email.svg"
+          alt=""
+        />
+        <img
+          className="tab-icon active-icon"
+          src="./img/drawer/tab/email.svg"
+          alt=""
+        />
+      </>
+    ),
+    children: <TabEmail />,
+  },
+  {
+    key: '5',
+    label: 'Files',
+    value: 'files',
+    icon: (
+      <>
+        <img
+          className="tab-icon default-icon"
+          src="./img/drawer/tab/files.svg"
+          alt=""
+        />
+        <img
+          className="tab-icon active-icon"
+          src="./img/drawer/tab/files.svg"
+          alt=""
+        />
+      </>
+    ),
+    children: <TabFiles />,
   },
 ];
 
