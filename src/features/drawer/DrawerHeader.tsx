@@ -1,6 +1,7 @@
 import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Button, Dropdown, Space } from 'antd';
+import { classNames } from '../../utils/helpers';
 
 function DrawerHeader({ isFullScreen, onClose, onFullScreen }) {
   let controls = (
@@ -24,6 +25,7 @@ function DrawerHeader({ isFullScreen, onClose, onFullScreen }) {
   );
   if (!isFullScreen) {
     controls = null;
+    console.log(controls);
   }
 
   const items: MenuProps['items'] = [
@@ -58,8 +60,18 @@ function DrawerHeader({ isFullScreen, onClose, onFullScreen }) {
       <div className="drawer-header__container">
         <div className="drawer-header__left control">
           {controls}
-          <div className="drawer-header__id">#600000</div>
-          <div className="drawer-header__username">John Smith</div>
+          <div
+            className={classNames(
+              controls ? 'ml-20' : '',
+              'd-flex flex-column',
+            )}
+          >
+            <div className="d-flex">
+              <div className="drawer-header__id id_1">#600000</div>
+              <div className="drawer-header__username">John Smith</div>
+            </div>
+            <div className="drawer-header__id id_2">PD: #110004, #110006</div>
+          </div>
         </div>
         <div className="drawer-header__right">
           <div className="drawer-header__actions">

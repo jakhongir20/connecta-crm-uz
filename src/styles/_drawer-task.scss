@@ -1,0 +1,119 @@
+.card {
+  // .card__row
+  &__row {
+    @include flexbox();
+    align-items: center;
+    margin: 0 -5px;
+  }
+  // .card__col
+  &__col {
+    padding: 0 5px;
+  }
+  // .card__icon
+  &__icon {
+    width: 24px;
+    height: 24px;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    img {
+      width: 100%;
+    }
+  }
+  // .card__body
+  &__body {
+    border-radius: 4px;
+    border: 1px solid #d1d1d1;
+    background-color: #fff;
+    @include flexbox();
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 4px 10px;
+  }
+  // .card__left
+  &__left {
+    overflow: hidden;
+    width: 100%;
+  }
+  // .card__texts
+  &__texts {
+    @include flexbox();
+    align-items: center;
+  }
+  // .card__text
+  &__text {
+    color: #21232c;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 95%;
+    // white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  // .card__bottom
+  &__bottom {
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    p {
+      position: relative;
+      padding: 0 10px;
+      &:first-child {
+        margin-left: -10px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        @include tr(0%, -50%, 0);
+        right: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #666666;
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  // .card__right
+  &__right {
+  }
+  // .card__action
+  &__action {
+    margin-left: 10px;
+    display: flex;
+    width: 21px;
+    padding: 3px 4px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+  }
+}
+
+/* ==================================================================================================================*/
+// history
+.history {
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs .ant-tabs-tab {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    border-radius: 4px;
+    color: #666666;
+    padding: 2px 6px;
+    border: none;
+    &.ant-tabs-tab-active {
+      color: #086ed6;
+      background-color: #ddf2fd;
+    }
+  }
+  :where(.css-dev-only-do-not-override-1qfezbu).ant-tabs
+    .ant-tabs-tab
+    + .ant-tabs-tab {
+    margin: 0 0 0 12px;
+  }
+}

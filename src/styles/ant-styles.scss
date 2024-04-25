@@ -13,6 +13,7 @@
 :where(.css-dev-only-do-not-override-1qfezbu).ant-drawer .ant-drawer-body {
   padding: 0;
 }
+
 :where(.css-dev-only-do-not-override-1qfezbu).ant-table-wrapper
   .ant-table-thead
   > tr
@@ -38,4 +39,13 @@
     border: 1px solid #d1d1d1 !important;
     padding: 3px 5px;
     background: #fff;
+}
+
+:where(.css-dev-only-do-not-override-1qfezbu) a {
+  color: rgba(0, 0, 0, 0.88);
+}
+:where(.css-dev-only-do-not-override-1qfezbu).ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header {
+  align-items: center;
 }
