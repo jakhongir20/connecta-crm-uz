@@ -1,6 +1,6 @@
-import DetailInnerHeaderDefault from './DetailInnerHeaderDefault';
-import DetailInnerHeaderOpen from './DetailInnerHeaderOpen';
-import { DetailHeaderInfo, IconArrowBold } from './DrawerFeatures';
+import DetailInnerHeaderDefault from '../DetailInnerHeaderDefault';
+import DetailInnerHeaderOpen from '../DetailInnerHeaderOpen';
+import { DetailHeaderInfo, IconArrowBold } from '../DrawerFeatures';
 
 type FeatVehicleProps = {
   keyValue: string;

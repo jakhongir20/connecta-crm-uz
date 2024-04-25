@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 import { useAppSelector } from '../../store/hooks';
-import { useEditVehicle } from './useEditVehicle';
+import { useEditVehicle } from './hooks/useEditVehicle';
 
 type DetailInnerHeaderOpenProps = {
   keyValue: string;

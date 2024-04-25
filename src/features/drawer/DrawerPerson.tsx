@@ -1,12 +1,10 @@
 import type { CollapseProps } from 'antd';
 import { Collapse } from 'antd';
 import { useState } from 'react';
-import FeatCondition from './feature/FeatCondition';
-import FeatConditionInner from './feature/FeatConditionInner';
-import FeatVehicle from './feature/FeatVehicle';
+import FeatPerson from './feature/FeatPerson';
 import FeatVehicleInner from './feature/FeatVehicleInner';
 
-function DetailInner() {
+function DrawerPerson() {
   const [openPanels, setOpenPanels] = useState<string[]>([]);
 
   const onChange = (key: string | string[]) => {
@@ -22,7 +20,7 @@ function DetailInner() {
     {
       key: '1',
       label: (
-        <FeatVehicle
+        <FeatPerson
           keyValue={'1'}
           openPanels={openPanels}
           onChange={onChange}
@@ -32,24 +30,6 @@ function DetailInner() {
         <div className="detail-inner">
           <div className="detail-inner__form">
             <FeatVehicleInner />
-          </div>
-        </div>
-      ),
-      showArrow: false,
-    },
-    {
-      key: '2',
-      label: (
-        <FeatCondition
-          keyValue={'2'}
-          openPanels={openPanels}
-          onChange={onChange}
-        />
-      ),
-      children: (
-        <div className="detail-inner">
-          <div className="detail-inner__form">
-            <FeatConditionInner />
           </div>
         </div>
       ),
@@ -70,4 +50,4 @@ function DetailInner() {
   );
 }
 
-export default DetailInner;
+export default DrawerPerson;

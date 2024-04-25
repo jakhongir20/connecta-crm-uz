@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-import Leads from '../../services/leads';
-import { VehicleFormData } from './vehicleSlice';
+import Leads from '../../../services/leads';
+import { VehicleFormData } from '../state/vehicleSlice';
 
 export function useEditVehicle() {
   // const queryClient = useQueryClient();

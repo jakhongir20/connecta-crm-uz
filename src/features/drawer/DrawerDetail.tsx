@@ -3,6 +3,7 @@ import { Button, Collapse } from 'antd';
 import { useState } from 'react';
 import DetailInner from './DrawerDetailInner';
 import { DrawerContentHead, IconArrow } from './DrawerFeatures';
+import DrawerPerson from './DrawerPerson';
 function Detail() {
   const [openPanels, setOpenPanels] = useState<string[]>([]);
 
@@ -113,7 +114,7 @@ function Detail() {
           onChange={onChange}
         />
       ),
-      children: <p>{'text'}</p>,
+      children: <DrawerPerson />,
     },
   ];
 
