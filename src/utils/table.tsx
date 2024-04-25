@@ -686,7 +686,7 @@ export const TeamTableData = [
     {
         key: '1',
         name: 'Ali.T',
-        users: ["John", "Ali", "Jonathan", "Sam", "Jack", "Mike", "Alice", "Scott", "Tulkin", ],
+        users: ["jon","Azim", "Ali", "Jonathan", "Sam", "Jack", "Mike", "Alice", "Scott", "Tulkin", ],
         status: "Active",
         created: '01/13/2024 09:27 AM',
     },
