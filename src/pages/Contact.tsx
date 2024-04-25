@@ -1,12 +1,6 @@
-// import Table from "../ui/Table";
-import TableHeader from "../ui/TableHeader";
+import TableHeader from "../ui/TableHeader"
 import { Table } from 'antd';
-import { QuotesTableColumns, QuotesTableData } from '../utils/table';
-import QuatesModal from "../ui/modal/QuatesModal";
-
-
-
-
+import { ContactTableColumns, ContactTableData } from '../utils/table';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -17,28 +11,24 @@ const rowSelection = {
   }),
 };
 
-function Quotes() {
+
+function Inbox() {
   return (
-    <div className="leads">
-      <div>
-        <TableHeader pageName="quotes" />
-      </div>
+    <div className="inbox">
+      <TableHeader pageName="contact" />
       <div className="quotes-table">
         <div className='table__container'>
           <Table
             rowSelection={{
-              // type: selectionType,
               ...rowSelection,
+
             }}
-            columns={QuotesTableColumns}
-            dataSource={QuotesTableData}
+            columns={ContactTableColumns}
+            dataSource={ContactTableData}
           />
         </div>
       </div>
-      <QuatesModal />
     </div>
-
-  );
+  )
 }
-
-export default Quotes;
+export default Inbox

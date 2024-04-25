@@ -1,19 +1,13 @@
 function Table() {
-  const onChecked = () => {
-    const d = document.querySelectorAll('input');
-    console.log(d);
 
-    d.forEach((item) => item.checked);
-  };
+
 
   return (
     <div className="table__container">
       <table className="table">
         <thead>
           <tr>
-            <th className="table__checkbox">
-              <input type="checkbox" onChange={onChecked} />
-            </th>
+            <th className="table__checkbox"><input type="checkbox"  /></th>
             <th>Id</th>
             <th>Received</th>
             <th className="table__user">User</th>
@@ -52,12 +46,11 @@ function Table() {
                     <span>25</span>
                     <div className="table__node__modal">
                       <div className="table__node__content">
-                        <div className="node__date">
-                          01/21/2024 09:01 AM Ali Brian
-                        </div>
-                        <p className="node__description">
-                          Customer wants to talk to customer
-                        </p>
+                          {/* <textarea cols={40} rows={4} className="table__node__textarea"></textarea>
+                            <div className="table__node__footer">
+                                <button type="button" className="table__node__info">Cancel</button>
+                                <button type="button" className="table__node__primary">Save</button>
+                            </div> */}
                       </div>
                     </div>
                   </div>

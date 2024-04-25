@@ -1,12 +1,5 @@
-// import Table from "../ui/Table";
-import TableHeader from "../ui/TableHeader";
 import { Table } from 'antd';
-import { QuotesTableColumns, QuotesTableData } from '../utils/table';
-import QuatesModal from "../ui/modal/QuatesModal";
-
-
-
-
+import { UsersTableColumns, UsersTableData } from '../../utils/table';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -16,29 +9,19 @@ const rowSelection = {
     name: record.name,
   }),
 };
-
-function Quotes() {
+export default function Users() {
   return (
-    <div className="leads">
-      <div>
-        <TableHeader pageName="quotes" />
-      </div>
-      <div className="quotes-table">
-        <div className='table__container'>
+    <div className="users-table">
+         <div className='table__container'>
           <Table
             rowSelection={{
               // type: selectionType,
               ...rowSelection,
             }}
-            columns={QuotesTableColumns}
-            dataSource={QuotesTableData}
+            columns={UsersTableColumns}
+            dataSource={UsersTableData}
           />
         </div>
-      </div>
-      <QuatesModal />
     </div>
-
-  );
+  )
 }
-
-export default Quotes;

@@ -1,0 +1,96 @@
+.setting {
+  &__sidebar {
+    width: 257px;
+    min-width: 257px;
+    border-right: 1px solid #d1d1d1;
+    background: #fff;
+    position: fixed;
+    top: 56px;
+    left: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    padding-top: 13px;
+    &__menu {
+      margin-top: 15px;
+      a {
+        padding: 10px 32px;
+        color: #21232c;
+        font-family: $fontfamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: flex;
+        width: 100%;
+        transition: 0.2s;
+      }
+      a:hover {
+        color: #086ed6;
+        border-right: 2px solid #086ed6;
+        background: #ddf2fd;
+      }
+      a.active {
+        color: #086ed6;
+        border-right: 2px solid #086ed6;
+        background: #ddf2fd;
+      }
+    }
+  }
+  &__content {
+    margin-left: 257px;
+  }
+
+  .ant-collapse {
+    background: none !important;
+    border: 0;
+    padding: 0;
+  }
+  .ant-collapse-item {
+    border: 0 !important;
+    margin-bottom: 16px;
+  }
+  .ant-collapse-content {
+    border: 0;
+  }
+  .ant-collapse-header {
+    padding: 0 !important;
+    color: #21232c !important;
+    font-family: $fontfamily;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .ant-collapse-content-box {
+    padding: 0 !important;
+  }
+}
+
+.status__active {
+  color: #e52e2e;
+}
+.user__name,
+.user__count {
+  border-radius: 4px;
+  background: #ddf2fd;
+  margin-right: 10px;
+  color: #21232c;
+  font-family: $fontfamily;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 2px 5px;
+}
+.user__count{
+  background: none;
+  padding: 0;
+}
+.user__empty{
+  color: #A4A4A4;
+font-family: $fontfamily;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
