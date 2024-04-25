@@ -88,15 +88,22 @@ $transition-duration: 200ms;
 
   // .drawer-header__id
   &__id {
-    font-weight: 400;
-    color: $color2;
-    margin-left: 18px;
+    font-weight: 500;
+    font-size: 15px;
+    white-space: nowrap;
+    &.id_1 {
+      color: $color2;
+    }
+    &.id_2 {
+      color: #e52e2e;
+    }
   }
   // .drawer-header__username
   &__username {
     font-weight: 700;
+    font-size: 15px;
     color: $color1;
-    margin-left: 25px;
+    margin-left: 20px;
   }
 
   &__more {
