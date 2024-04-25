@@ -1,5 +1,6 @@
 import { Table } from 'antd';
 import { TeamTableColumns, TeamTableData } from '../../utils/table';
+import TableHeader from '../../ui/TableHeader';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -11,7 +12,8 @@ const rowSelection = {
 };
 export default function Teams() {
   return (
-    <div className='team-table'>
+    <div className='team'>
+      <TableHeader pageName='Team'/>
        <div className='table__container'>
           <Table
             rowSelection={{

@@ -1,5 +1,8 @@
 import TableSelect from './TableSelect';
-
+import ellipse from "../../public/img/dt_table/ellipse.svg"
+import not from "../../public/img/dt_table/not_full_view.svg"
+import user from "../../public/img/dt_table/default_user_image.png"
+import hamburg from "../../public/img/dt_table/hamburg_menu.svg"
 function TableHeaderRight() {
   const discountOptions = [
     { value: 'all', label: 'All' },
@@ -18,7 +21,7 @@ function TableHeaderRight() {
       <div className="dt-header__allsources dt-header-select">
         <img
           className="dt-header-select_icon"
-          src="./img/dt_table/ellipse.svg"
+          src={ellipse}
           alt=""
         />
         <TableSelect selectField="discount" options={discountOptions} />
@@ -32,7 +35,7 @@ function TableHeaderRight() {
         </div>
       </div>
       <div className="dt-header__showlist_open">
-        <img src="./img/dt_table/not_full_view.svg" alt="" />
+        <img src={not} alt="" />
       </div>
       <div className="dt-header__search">
         <input
@@ -44,18 +47,18 @@ function TableHeaderRight() {
       <div className="dt-header__users dt-header-select">
         <img
           className="dt-header-select_icon"
-          src="./img/dt_table/ellipse.svg"
+          src={ellipse}
           alt=""
         />
         <img
           className="dt-header-select_avater"
-          src="./img/dt_table/default_user_image.png"
+          src={user}
           alt=""
         />
         <TableSelect selectField="users" options={userOptions} />
       </div>
       <div className="dt-header__hamburg">
-        <img src="./img/dt_table/hamburg_menu.svg" alt="" />
+        <img src={hamburg} alt="" />
       </div>
     </div>
   );

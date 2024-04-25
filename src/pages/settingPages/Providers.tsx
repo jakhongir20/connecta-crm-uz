@@ -1,5 +1,6 @@
 import { Table } from 'antd';
 import { ProvidersTableColumns, ProvidersTableData } from '../../utils/table';
+import TableHeader from '../../ui/TableHeader';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -11,7 +12,8 @@ const rowSelection = {
 };
 export default function Providers() {
   return (
-    <div className='provider-table'>
+    <div className='provider'>
+      <TableHeader pageName='Provider'/>
       <div className='table__container'>
         <Table
           rowSelection={{

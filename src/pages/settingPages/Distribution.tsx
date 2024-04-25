@@ -1,5 +1,6 @@
 import { Table } from 'antd';
 import { DistributionTableColumns, DistributionTableData } from '../../utils/table';
+import TableHeader from '../../ui/TableHeader';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -11,7 +12,8 @@ const rowSelection = {
 };
 export default function Distribution() {
   return (
-    <div className="distribution-table">
+    <div className="distribution">
+      <TableHeader pageName='distribution'/>
     <div className='table__container'>
         <Table
           rowSelection={{
