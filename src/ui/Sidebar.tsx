@@ -1,54 +1,58 @@
-import { NavLink } from "react-router-dom";
-import { getMenuData } from "../services/menu";
-import logo from "../../public/img/logo.svg"
+import { NavLink } from 'react-router-dom';
+import logo from '../../public/img/logo.svg';
+import { getMenuData } from '../services/menu';
 function Sidebar() {
   const user = {
-    roles: ["admin", "user"]
+    roles: ['admin', 'user'],
   };
 
   if (!user) {
     return null;
   }
 
-  const filteredMenu = getMenuData.filter(item => {
-
-    return item.roles.some(role => user?.roles?.includes(role));
+  const filteredMenu = getMenuData.filter((item) => {
+    return item.roles.some((role) => user?.roles?.includes(role));
   });
-
 
   return (
     <div className="sidebar">
       <nav className="nav">
         <ul className="nav__list">
           <li>
-            <a className="nav__link" href="/"
-            ><img src={logo} alt="Logo"
-              /></a>
+            <a className="nav__link" href="/">
+              <img src={logo} alt="Logo" />
+            </a>
           </li>
-          {filteredMenu.map(({ key, path, icon, icon_active }) => {
+          {filteredMenu.map(({ key, path, icon, iconActive }) => {
             return (
               <li key={key}>
-                <NavLink to={path} className={({ isActive }) => isActive ? 'nav__link _active' : 'nav__link '}
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    isActive ? 'nav__link _active' : 'nav__link '
+                  }
                 >
-                  {/* {({ isActive }) => <img src={`./img/sidebar/${isActive ? icon_active : icon}.svg`} alt={isActive ? icon_active : icon} */}
-                  {({ isActive }) => <img src={isActive ? icon_active : icon} alt={isActive ? icon_active : icon}
-
-                  />}
+                  {/* {({ isActive }) => <img src={`./img/sidebar/${isActive ? iconActive : icon}.svg`} alt={isActive ? iconActive : icon} */}
+                  {({ isActive }) => (
+                    <img
+                      src={isActive ? iconActive : icon}
+                      alt={isActive ? iconActive : icon}
+                    />
+                  )}
                 </NavLink>
               </li>
             );
           })}
         </ul>
       </nav>
-    </div >
-
+    </div>
   );
 }
 
 export default Sidebar;
 
-
-{/* <li>
+{
+  /* <li>
 <a className="nav__link" href="/"
 ><img src="./img/sidebar/02.svg" alt=""
   /></a>
@@ -92,4 +96,5 @@ export default Sidebar;
 <a className="nav__link" href="/"
 ><img src="./img/sidebar/10.svg" alt=""
   /></a>
-</li> */}
+</li> */
+}

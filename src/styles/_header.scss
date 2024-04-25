@@ -1,6 +1,6 @@
 .header {
   // .header__menu
-  
+
   &__menu {
   }
 }
@@ -67,4 +67,22 @@
   }
 }
 .input-search-big {
+}
+.menu__item_breadcrumb {
+  .menu__link {
+    color: #164863;
+  }
+}
+.menu__item_breadcrumb_1 {
+  position: relative;
+  &::before {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    @include tr(0, -50%, 0);
+    left: -4px;
+    color: #164863;
+    font-size: 16px;
+    font-weight: 600;
+  }
 }
