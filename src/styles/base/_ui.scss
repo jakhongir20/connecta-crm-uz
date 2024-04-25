@@ -113,6 +113,9 @@ body {
 .mr-5 {
   margin-right: 5px;
 }
+.ml-20 {
+  margin-left: 20px;
+}
 .-ml-15 {
   margin-left: -15px;
 }
@@ -121,6 +124,12 @@ body {
 }
 .-ml-25 {
   margin-left: -25px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-5 {
+  margin-bottom: 5px;
 }
 .pl-5 {
   padding-left: 5px !important;
@@ -137,6 +146,12 @@ body {
 .justify-between {
   justify-content: space-between;
 }
+.flex-column {
+  flex-direction: column;
+}
 .cursor-inherit {
   cursor: initial;
+}
+.w-100 {
+  width: 100%;
 }

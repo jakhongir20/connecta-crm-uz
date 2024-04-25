@@ -4,6 +4,8 @@ import DetailBox from './DrawerDetail';
 import { DrawerContentHead, IconArrow } from './DrawerFeatures';
 import Map from './map/Map';
 import Tabs from './tabs/Tabs.tsx';
+import Task from './task/Task.tsx';
+import History from './history/History.tsx';
 
 function DrawerContent() {
   const items: CollapseProps['items'] = [
@@ -15,12 +17,12 @@ function DrawerContent() {
     {
       key: '2',
       label: <DrawerContentHead label="Task" />,
-      children: <p>task</p>,
+      children: <Task />,
     },
     {
       key: '3',
       label: <DrawerContentHead label="History" />,
-      children: <p></p>,
+      children: <History />,
     },
   ];
 
@@ -34,7 +36,7 @@ function DrawerContent() {
         <Tabs />
         <br />
         <Collapse
-          defaultActiveKey={['2']}
+          defaultActiveKey={['3']}
           ghost
           collapsible="header"
           expandIcon={IconArrow}

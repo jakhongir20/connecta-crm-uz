@@ -1,7 +1,6 @@
 .drawer-content {
   @include flexbox();
   background: #fafafa;
-  height: 100%;
   .ant-collapse-item {
     .arrow-icon {
       width: 14px;
@@ -32,9 +31,8 @@
     width: 400px;
     min-width: 400px;
     border-right: 1px solid #d1d1d1;
-    height: 100%;
     overflow-y: auto;
-
+    min-height: 100vh;
     // :where(.css-dev-only-do-not-override-1qfezbu).ant-collapse
     //   > .ant-collapse-item
     //   .ant-collapse-icon-collapsible-only
