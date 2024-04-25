@@ -23,7 +23,7 @@ const items: TabsProps['items'] = [
   {
     key: '2',
     label: 'Notes (0)',
-    children: <HistoryCard type={'note'} data={data} />,
+    children: <p className="text-center">Empty</p>,
   },
   {
     key: '3',
