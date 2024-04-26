@@ -22,17 +22,16 @@ type FilterByType = {
   title: string;
 };
 
-export type MenuCommon = {
-  elements?: MenuNestedData[];
+export type MenuNestedData = {
   title: string;
   path: string;
-};
-export type MenuNestedData = {
   category: string;
   el: ComponentType<unknown>;
-} & MenuCommon;
+};
 
 export type MenuData = {
+  title: string;
+  path: string;
   key: string;
   icon: string;
   iconActive: string;
@@ -40,7 +39,7 @@ export type MenuData = {
   roles: string[];
   filterBy?: FilterByType[];
   elements?: MenuNestedData[];
-} & MenuCommon;
+};
 
 export const elements: MenuNestedData[] = [
   {
