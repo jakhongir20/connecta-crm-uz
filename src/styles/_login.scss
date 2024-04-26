@@ -1,0 +1,162 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  @include flexbox();
+  align-items: center;
+  justify-content: center;
+  &__content {
+    width: 320px;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+  }
+  &__form {
+    img {
+      width: 15px;
+      height: 15px;
+    }
+    &__header {
+      border-radius: 10px 10px 0px 0px;
+      background: #ddf2fd;
+      color: #164863;
+      text-align: center;
+      font-family: $fontfamily;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      padding: 15.5px 0;
+    }
+    &__body {
+      padding: 20px 25px 26px;
+      label {
+        color: #164863;
+        font-family: $fontfamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+    &__group:first-child {
+      margin-bottom: 11px;
+    }
+    &__control {
+      border-radius: 5px;
+      border: 1px solid #d1d1d1;
+      background: #fff;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 5px;
+      .password-icon {
+        cursor: pointer;
+        position: relative;
+      }
+      .close-icon {
+        width: 1px;
+        height: 15px;
+        background-color: rgb(0 0 0);
+        display: block;
+        position: absolute;
+        top: 0px;
+        transform: rotate(45deg);
+        left: 7px;
+        border-radius: 5px;
+      }
+      input {
+        border: 0;
+        outline: none;
+        width: 100%;
+      }
+      input::placeholder {
+        color: #d1d1d1;
+        font-family: $fontfamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      input:focus {
+        color: #21232c;
+        font-family: $fontfamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    &__message {
+      @include flexbox();
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2px;
+    }
+    &__error {
+      img {
+        width: 10px;
+        height: 10px;
+      }
+      @include flexbox();
+      align-items: center;
+      gap: 2px;
+      color: #e52e2e;
+      font-family: $fontfamily;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    &__forget {
+      color: #427d9d;
+      text-align: right;
+      font-family: $fontfamily;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      cursor: pointer;
+    }
+    &__btn {
+      margin-top: 23px;
+      button {
+        color: #fff;
+        text-align: center;
+        font-family: $fontfamily;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 5px;
+        background: #086ed6;
+        width: 100%;
+        padding: 10px;
+      }
+    }
+    &__time {
+      color: #21232c;
+      font-family: $fontfamily;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    &__message__list {
+      margin-top: 2px;
+      margin-left: 16px;
+      li {
+        list-style: disc !important;
+        color: #767676;
+        font-family: $fontfamily;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    &__success-message{
+        color:  #427D9D !important;
+    }
+  }
+}

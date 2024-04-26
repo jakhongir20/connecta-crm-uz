@@ -1,5 +1,6 @@
 import { Table } from 'antd';
 import { UsersTableColumns, UsersTableData } from '../../utils/table';
+import TableHeader from '../../ui/TableHeader';
 const rowSelection = {
   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -11,7 +12,8 @@ const rowSelection = {
 };
 export default function HawaiiAndAlaska() {
   return (
-    <div className="country-table">
+    <div className="regions">
+      <TableHeader pageName='region'/>
           <div className='table__container'>
         <Table
           rowSelection={{
