@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { ComponentType, lazy } from 'react';
 
 import firstImg from '../../../public/img/sidebar/01.svg';
 import firstImgActive from '../../../public/img/sidebar/01_active.svg';
@@ -13,9 +13,8 @@ import sixthImgActive from '../../../public/img/sidebar/06_active.svg';
 import ninthImg from '../../../public/img/sidebar/09.svg';
 import ninthImgActive from '../../../public/img/sidebar/09_active.svg';
 
-const lazyload = (name: string) => lazy(() => import(`../../pages/${name}`));
-const lazyloadInner = (name: string) =>
-  lazy(() => import(`../../pages/settingPages/${name}`));
+const lazyload = (name: string, nested = false) =>
+  lazy(() => import(`../../pages/${nested ? `settings/${name}` : name}`));
 
 type FilterByType = {
   id: number;
@@ -23,75 +22,113 @@ type FilterByType = {
   title: string;
 };
 
-export type MenuItem = {
+export type MenuNestedData = {
   title: string;
-  key: string;
   path: string;
+  category: string;
+  el: ComponentType<unknown>;
+};
+
+export type MenuData = {
+  title: string;
+  path: string;
+  key: string;
   icon: string;
   iconActive: string;
   component: React.FC<unknown>;
   roles: string[];
   filterBy?: FilterByType[];
-  elements?: { path: string; el: React.FC<unknown> }[];
+  elements?: MenuNestedData[];
 };
 
-const elements = [
+export const elements: MenuNestedData[] = [
   {
     title: 'Users',
-    path: '/setting/',
-    el: lazyloadInner('ReplaceCurreentPage'),
+    path: '/settings/users',
+    category: 'User Management',
+    el: lazyload('Users', true),
   },
-  { title: 'Users', path: '/setting/users', el: lazyloadInner('Users') },
-  { title: 'Teams', path: '/setting/teams', el: lazyloadInner('Teams') },
-  { title: 'Roles', path: '/setting/roles', el: lazyloadInner('AccessRoles') },
+  {
+    title: 'Teams',
+    path: '/settings/teams',
+    category: 'User Management',
+    el: lazyload('Teams', true),
+  },
+  {
+    title: 'Roles',
+    path: '/settings/roles',
+    category: 'User Management',
+    el: lazyload('AccessRoles', true),
+  },
   {
     title: 'Providers',
-    path: '/setting/providers',
-    el: lazyloadInner('Providers'),
+    path: '/settings/providers',
+    category: 'Lead Management',
+    el: lazyload('Providers', true),
   },
   {
     title: 'Distribution',
-    path: '/setting/distribution',
-    el: lazyloadInner('Distribution'),
+    path: '/settings/distribution',
+    category: 'Lead Management',
+    el: lazyload('Distribution', true),
   },
   {
     title: 'Lead Parsing',
-    path: '/setting/lead-parsing',
-    el: lazyloadInner('LeadParsing'),
+    path: '/settings/lead-parsing',
+    category: 'Lead Management',
+    el: lazyload('LeadParsing', true),
   },
-  { title: 'Ground', path: '/setting/ground', el: lazyloadInner('Ground') },
+  {
+    title: 'Ground',
+    path: '/settings/ground',
+    category: 'Contract',
+    el: lazyload('Ground', true),
+  },
   {
     title: 'Regions',
-    path: '/setting/regions',
-    el: lazyloadInner('HawaiiAndAlaska'),
+    path: '/settings/regions',
+    category: 'Contract',
+    el: lazyload('HawaiiAndAlaska', true),
   },
   {
     title: 'International',
-    path: '/setting/international',
-    el: lazyloadInner('International'),
+    path: '/settings/international',
+    category: 'Contract',
+    el: lazyload('International', true),
   },
-  { title: 'Name', path: '/setting/name', el: lazyloadInner('CompanyName') },
+  {
+    title: 'Name',
+    path: '/settings/name',
+    category: 'Company Management',
+    el: lazyload('CompanyName', true),
+  },
   {
     title: 'Merchant',
-    path: '/setting/merchant',
-    el: lazyloadInner('Merchant'),
+    path: '/settings/merchant',
+    category: 'Company Management',
+    el: lazyload('Merchant', true),
   },
   {
     title: 'Payment',
-    path: '/setting/payment',
-    el: lazyloadInner('PaymentApps'),
+    path: '/settings/payment',
+    category: 'Company Management',
+    el: lazyload('PaymentApps', true),
   },
-  { title: 'Voip', path: '/setting/voip', el: lazyloadInner('VoIP') },
+  {
+    title: 'Voip',
+    path: '/settings/voip',
+    category: 'Company Management',
+    el: lazyload('VoIP', true),
+  },
   {
     title: 'Templates',
-    path: '/setting/templates',
-    el: lazyloadInner('Templates'),
+    path: '/settings/templates',
+    category: 'Company Management',
+    el: lazyload('Templates', true),
   },
 ];
 
-type MenuData = MenuItem[];
-
-export const getMenuData: MenuData = [
+export const getMenuData: MenuData[] = [
   {
     title: 'Leads',
     key: '__leads',
@@ -155,9 +192,9 @@ export const getMenuData: MenuData = [
     component: lazyload('Task'),
     roles: ['admin', 'user'],
     filterBy: [
-      { id: 21, value: 'archived', title: 'Task list' },
-      { id: 22, value: 'archived', title: 'Support' },
-      { id: 23, value: 'archived', title: 'Completed' },
+      { id: 21, value: 'task_list', title: 'Task list' },
+      { id: 22, value: 'support', title: 'Support' },
+      { id: 23, value: 'completed', title: 'Completed' },
       { id: 24, value: 'archived', title: 'Archived' },
     ],
   },
@@ -170,15 +207,15 @@ export const getMenuData: MenuData = [
     component: lazyload('Contact'),
     roles: ['admin', 'user'],
     filterBy: [
-      { id: 25, value: 'archived', title: 'All customers' },
-      { id: 26, value: 'archived', title: 'Active' },
-      { id: 27, value: 'archived', title: 'Inactive' },
+      { id: 25, value: 'all_customers', title: 'All customers' },
+      { id: 26, value: 'active', title: 'Active' },
+      { id: 27, value: 'inactive', title: 'Inactive' },
     ],
   },
   {
     title: 'Settings',
-    key: '__setting',
-    path: '/setting',
+    key: '__settings',
+    path: '/settings',
     icon: ninthImg,
     iconActive: ninthImgActive,
     component: lazyload('Settings'),

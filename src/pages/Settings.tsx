@@ -1,10 +1,10 @@
-import { Outlet } from "react-router-dom";
-import SettingSidebar from "../ui/SettingSidebar";
+import { Outlet } from 'react-router-dom';
+import SettingsSidebar from '../ui/SettingsSidebar';
 
 function Settings() {
   return (
     <div className="setting">
-      <SettingSidebar />
+      <SettingsSidebar />
       <div className="setting__content">
         <Outlet />
       </div>

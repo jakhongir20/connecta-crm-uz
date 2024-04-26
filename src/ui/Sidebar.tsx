@@ -1,7 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../public/img/logo.svg';
 import { getMenuData } from '../services/menu';
 function Sidebar() {
+  const { pathname } = useLocation();
+
   const user = {
     roles: ['admin', 'user'],
   };
@@ -14,29 +16,39 @@ function Sidebar() {
     return item.roles.some((role) => user?.roles?.includes(role));
   });
 
+  const isSettingsRouteActive = (route: string) => {
+    return pathname.startsWith(route);
+  };
+
   return (
     <div className="sidebar">
       <nav className="nav">
         <ul className="nav__list">
           <li>
-            <a className="nav__link" href="/">
+            <NavLink to="/leads" className="nav__link">
               <img src={logo} alt="Logo" />
-            </a>
+            </NavLink>
           </li>
           {filteredMenu.map(({ key, path, icon, iconActive }) => {
+            const $path = path !== '/settings' ? path : '/settings/users';
             return (
               <li key={key}>
                 <NavLink
-                  to={path}
+                  to={$path}
                   className={({ isActive }) =>
-                    isActive ? 'nav__link _active' : 'nav__link '
+                    isActive || isSettingsRouteActive(path)
+                      ? 'nav__link _active'
+                      : 'nav__link '
                   }
                 >
-                  {/* {({ isActive }) => <img src={`./img/sidebar/${isActive ? iconActive : icon}.svg`} alt={isActive ? iconActive : icon} */}
                   {({ isActive }) => (
                     <img
-                      src={isActive ? iconActive : icon}
-                      alt={isActive ? iconActive : icon}
+                      src={
+                        isActive || isSettingsRouteActive(path)
+                          ? iconActive
+                          : icon
+                      }
+                      alt="Icon"
                     />
                   )}
                 </NavLink>
@@ -50,51 +62,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
-{
-  /* <li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/02.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/03.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/04.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/05.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/06.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/07.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/08.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/09.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/10.svg" alt=""
-  /></a>
-</li> */
-}

@@ -1,4 +1,4 @@
-@import 'base/_mixins';
+@import 'base/mixins';
 
 $fontfamily: 'Roboto', sans-serif;
 
@@ -16,6 +16,7 @@ $color4: #164863;
 
 $color-secondary: #427d9d;
 $color-gray: #666;
+$color-white: #ffffff;
 
 ._container {
   max-width: $mw + px;
@@ -37,29 +38,33 @@ $color-gray: #666;
   }
 }
 
-@import 'base/_ui';
+// base variables. styles
+@import 'base/ui';
+@import 'base/select';
+@import 'base/input';
+@import 'base/btn';
+@import 'base/forms';
 @import 'ant-styles';
 
-@import "_login";
 @import '_header';
 @import '_table-header';
 @import '_table';
-@import '_sidebar';
-@import '_drawer';
-@import '_drawer-content';
 @import '_jodit-editor';
-@import '_drawer-tab';
-@import '_drawer-task';
 @import '_page-details';
-@import "_modal";
-@import "_collapse";
-@import "_table-search-buttons";
-@import "_settings";
-@import 'base/_select';
-@import 'base/_input';
-@import 'base/_btn';
-@import 'base/_forms';
+@import '_modal';
+@import '_collapse';
+@import '_table-search-buttons';
+@import '_settings';
 
+// base layout
+@import 'layout/header';
+@import 'layout/sidebar';
+
+// drawer styles
+@import 'drawer/drawer';
+@import 'drawer/drawer-content';
+@import 'drawer/drawer-tab';
+@import 'drawer/drawer-task';
 // ====================================== MAIN CONTENT ============================================================================
 .wrapper {
   display: grid;
