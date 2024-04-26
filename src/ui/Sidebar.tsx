@@ -1,7 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../public/img/logo.svg';
 import { getMenuData } from '../services/menu';
 function Sidebar() {
+  const { pathname } = useLocation();
+
   const user = {
     roles: ['admin', 'user'],
   };
@@ -14,6 +16,10 @@ function Sidebar() {
     return item.roles.some((role) => user?.roles?.includes(role));
   });
 
+  const isSettingsRouteActive = (route: string) => {
+    return pathname.startsWith(route);
+  };
+
   return (
     <div className="sidebar">
       <nav className="nav">
@@ -24,19 +30,30 @@ function Sidebar() {
             </a>
           </li>
           {filteredMenu.map(({ key, path, icon, iconActive }) => {
+            const $path = path !== '/settings' ? path : '/settings/users';
             return (
               <li key={key}>
                 <NavLink
-                  to={path}
+                  to={$path}
                   className={({ isActive }) =>
-                    isActive ? 'nav__link _active' : 'nav__link '
+                    isActive || isSettingsRouteActive(path)
+                      ? 'nav__link _active'
+                      : 'nav__link '
                   }
                 >
                   {/* {({ isActive }) => <img src={`./img/sidebar/${isActive ? iconActive : icon}.svg`} alt={isActive ? iconActive : icon} */}
                   {({ isActive }) => (
                     <img
-                      src={isActive ? iconActive : icon}
-                      alt={isActive ? iconActive : icon}
+                      src={
+                        isActive || isSettingsRouteActive(path)
+                          ? iconActive
+                          : icon
+                      }
+                      alt={
+                        isActive || isSettingsRouteActive(path)
+                          ? iconActive
+                          : icon
+                      }
                     />
                   )}
                 </NavLink>

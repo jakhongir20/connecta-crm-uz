@@ -48,7 +48,7 @@ function App() {
                             <Route
                               key={item.path}
                               path={item.path}
-                              element={<>{createElement(item.el)}</>}
+                              element={createElement(item.el)}
                             />
                           ))}
                       </Route>
