@@ -25,9 +25,9 @@ function Sidebar() {
       <nav className="nav">
         <ul className="nav__list">
           <li>
-            <a className="nav__link" href="/">
+            <NavLink to="/leads" className="nav__link">
               <img src={logo} alt="Logo" />
-            </a>
+            </NavLink>
           </li>
           {filteredMenu.map(({ key, path, icon, iconActive }) => {
             const $path = path !== '/settings' ? path : '/settings/users';
@@ -41,7 +41,6 @@ function Sidebar() {
                       : 'nav__link '
                   }
                 >
-                  {/* {({ isActive }) => <img src={`./img/sidebar/${isActive ? iconActive : icon}.svg`} alt={isActive ? iconActive : icon} */}
                   {({ isActive }) => (
                     <img
                       src={
@@ -49,11 +48,7 @@ function Sidebar() {
                           ? iconActive
                           : icon
                       }
-                      alt={
-                        isActive || isSettingsRouteActive(path)
-                          ? iconActive
-                          : icon
-                      }
+                      alt="Icon"
                     />
                   )}
                 </NavLink>
@@ -67,51 +62,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
-{
-  /* <li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/02.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/03.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/04.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/05.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/06.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/07.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/08.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/09.svg" alt=""
-  /></a>
-</li>
-<li>
-<a className="nav__link" href="/"
-><img src="./img/sidebar/10.svg" alt=""
-  /></a>
-</li> */
-}

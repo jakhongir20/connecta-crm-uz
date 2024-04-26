@@ -21,7 +21,8 @@
     display: block;
     font-weight: 700;
     @include anim(0.3s, 0s);
-    &._active {
+    &._active,
+    &:hover {
       background-color: #ddf2fd;
       border-color: #0087ff;
     }
@@ -71,6 +72,13 @@
 .menu__item_breadcrumb {
   .menu__link {
     color: #164863;
+    @include anim(0s, 0s);
+    &:hover {
+      background-color: inherit;
+      color: inherit;
+      border: none;
+      @include anim(0s, 0s);
+    }
   }
 }
 .menu__item_breadcrumb_1 {
@@ -78,7 +86,7 @@
   &::before {
     content: '>';
     position: absolute;
-    top: 50%;
+    top: 49%;
     @include tr(0, -50%, 0);
     left: -4px;
     color: #164863;

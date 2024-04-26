@@ -1,40 +1,54 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { getMenuData } from '../services/menu';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { MenuData, getMenuData } from '../services/menu';
+import { classNames } from '../utils/helpers';
+
+type Breadcrumb = {
+  title: string;
+  path: string;
+};
 
 function Header() {
   const { pathname } = useLocation();
-  const currentPath = getMenuData.find((menu) => pathname.includes(menu.path));
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [searchParams] = useSearchParams();
+  const isActive = searchParams.get('filterBy') || '';
+
+  const currentPath: MenuData | undefined = getMenuData.find((menu) =>
+    pathname.includes(menu.path),
+  );
+  const [breadcrumbs, setBreadcrumbs] = useState<MenuData[]>([]);
 
   useEffect(() => {
-    function getPath(data, path: string, parents = []) {
-      if (path === '/') {
-        path = '/leads';
-      }
-      return data.reduce((result, entry) => {
-        if (result.length) {
-          return result;
+    type PathElement = MenuData & { elements?: PathElement[] };
+    function getPath(
+      data: PathElement[],
+      path: string,
+      parents: PathElement[] = [],
+    ): PathElement[] {
+      const adjustedPath = path === '/' ? '/leads' : path;
+
+      return data.reduce<PathElement[]>((result, entry) => {
+        if (result.length) return result;
+
+        if (entry.path === adjustedPath) {
+          return [entry, ...parents];
         }
 
         if (entry.elements) {
-          const nested = getPath(entry.elements, path, [entry].concat(parents));
-          return (result || []).concat(nested.filter((e) => !!e));
-        }
-
-        if (path === entry.path) {
-          return [entry].concat(parents);
+          const nested = getPath(entry.elements, adjustedPath, [
+            entry,
+            ...parents,
+          ]);
+          return nested.length > 0 ? nested : result;
         }
 
         return result;
       }, []);
     }
 
-    if (currentPath?.elements) {
-      const fullBreadcrumb = getPath(getMenuData, pathname);
-      setBreadcrumbs(fullBreadcrumb);
-    }
-  }, [pathname, currentPath]);
+    const fullBreadcrumb = getPath(getMenuData as PathElement[], pathname);
+    setBreadcrumbs(fullBreadcrumb);
+  }, [pathname]);
 
   return (
     <div className="header">
@@ -45,7 +59,10 @@ function Header() {
               <li key={item.id}>
                 <Link
                   to={`${currentPath.path}?filterBy=${item.value}`}
-                  className="menu__link"
+                  className={classNames(
+                    isActive === item.value ? '_active' : '',
+                    'menu__link',
+                  )}
                 >
                   {item.title}
                 </Link>
@@ -55,7 +72,7 @@ function Header() {
             <>
               {breadcrumbs.length &&
                 breadcrumbs
-                  .map((crumb, index) => (
+                  .map((crumb: Breadcrumb, index) => (
                     <li
                       key={index}
                       className={`menu__item_breadcrumb menu__item_breadcrumb_${index + 1}`}

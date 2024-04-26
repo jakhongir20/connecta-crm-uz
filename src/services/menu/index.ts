@@ -22,24 +22,25 @@ type FilterByType = {
   title: string;
 };
 
-export type MenuNestedData = {
+export type MenuCommon = {
+  elements?: MenuNestedData[];
   title: string;
   path: string;
+};
+export type MenuNestedData = {
   category: string;
   el: ComponentType<unknown>;
-};
+} & MenuCommon;
 
-export type MenuItem = {
-  title: string;
+export type MenuData = {
   key: string;
-  path: string;
   icon: string;
   iconActive: string;
   component: React.FC<unknown>;
   roles: string[];
   filterBy?: FilterByType[];
   elements?: MenuNestedData[];
-};
+} & MenuCommon;
 
 export const elements: MenuNestedData[] = [
   {
@@ -128,9 +129,7 @@ export const elements: MenuNestedData[] = [
   },
 ];
 
-type MenuData = MenuItem[];
-
-export const getMenuData: MenuData = [
+export const getMenuData: MenuData[] = [
   {
     title: 'Leads',
     key: '__leads',
@@ -194,9 +193,9 @@ export const getMenuData: MenuData = [
     component: lazyload('Task'),
     roles: ['admin', 'user'],
     filterBy: [
-      { id: 21, value: 'archived', title: 'Task list' },
-      { id: 22, value: 'archived', title: 'Support' },
-      { id: 23, value: 'archived', title: 'Completed' },
+      { id: 21, value: 'task_list', title: 'Task list' },
+      { id: 22, value: 'support', title: 'Support' },
+      { id: 23, value: 'completed', title: 'Completed' },
       { id: 24, value: 'archived', title: 'Archived' },
     ],
   },
@@ -209,9 +208,9 @@ export const getMenuData: MenuData = [
     component: lazyload('Contact'),
     roles: ['admin', 'user'],
     filterBy: [
-      { id: 25, value: 'archived', title: 'All customers' },
-      { id: 26, value: 'archived', title: 'Active' },
-      { id: 27, value: 'archived', title: 'Inactive' },
+      { id: 25, value: 'all_customers', title: 'All customers' },
+      { id: 26, value: 'active', title: 'Active' },
+      { id: 27, value: 'inactive', title: 'Inactive' },
     ],
   },
   {
