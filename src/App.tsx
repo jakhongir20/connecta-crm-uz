@@ -6,12 +6,16 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Suspense, createElement } from 'react';
 import { DarkModeProvider } from './context/DarkModeContext';
 import ModalProvider from './context/Modal.tsx';
-import Login from './pages/Login.tsx';
+import Login from './pages/auth/Login.tsx';
 import PageNotFound from './pages/PageNotFound.tsx';
 import { getMenuData } from './services/menu/index.ts';
 import AppLayout from './ui/AppLayout.tsx';
 import ProtectedRoute from './ui/ProtectedRoute.tsx';
 import Spinner from './ui/Spinner.tsx';
+import Auth from './pages/auth/Auth.tsx';
+import ConfirmEmail from './pages/auth/ConfirmEmail.tsx';
+import ConfirmCode from './pages/auth/ConfirmCode.tsx';
+import ConfirmPassword from './pages/auth/ConfirmPassword.tsx';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -55,7 +59,13 @@ function App() {
                     );
                   })}
                 </Route>
-                <Route path="login" element={<Login />} />
+                <Route path="/auth" element={<Auth />} >
+                  <Route path="/auth/" element={<Navigate replace to="/auth/login" />} />
+                  <Route path="/auth/login" element={<Login />} />
+                  <Route path="/auth/confirm/email" element={<ConfirmEmail />} />
+                  <Route path="/auth/confirm/code" element={<ConfirmCode />} />
+                  <Route path="/auth/confirm/password" element={<ConfirmPassword />} />
+                </Route>
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </Suspense>
